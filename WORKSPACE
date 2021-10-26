@@ -8,10 +8,10 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 http_archive(
     name = "bazel_skylib",
-    sha256 = "1c531376ac7e5a180e0237938a2536de0c54d93f5c278634818e0efc952dd56c",
+    sha256 = "c6966ec828da198c5d9adbaa94c05e3a1c7f21bd012a0b29ba8ddbccb2c93b0d",
     urls = [
-        "https://github.com/bazelbuild/bazel-skylib/releases/download/1.0.3/bazel-skylib-1.0.3.tar.gz",
-        "https://mirror.bazel.build/github.com/bazelbuild/bazel-skylib/releases/download/1.0.3/bazel-skylib-1.0.3.tar.gz",
+        "https://github.com/bazelbuild/bazel-skylib/releases/download/1.1.1/bazel-skylib-1.1.1.tar.gz",
+        "https://mirror.bazel.build/github.com/bazelbuild/bazel-skylib/releases/download/1.1.1/bazel-skylib-1.1.1.tar.gz",
     ],
 )
 
@@ -86,9 +86,9 @@ http_archive(
 
 http_archive(
     name = "io_bazel_rules_scala",
-    sha256 = "abd05e18561b43ef1f028847b67ebfcd57ed1a0013167b7a93672d2f99960679",
-    strip_prefix = "rules_scala-5e14dfd47f1d4af5ae50879457d07fe1f909bc0c",
-    url = "https://github.com/bazelbuild/rules_scala/archive/5e14dfd47f1d4af5ae50879457d07fe1f909bc0c.tar.gz",
+    sha256 = "1651fda08f7e3c37c84381cbc5c2805a3a6354b4e97bc0407209c3bdba42e1c1",
+    strip_prefix = "rules_scala-fd997e6f3dd4f9af7033116be1383a1be1c41554",
+    url = "https://github.com/bazelbuild/rules_scala/archive/fd997e6f3dd4f9af7033116be1383a1be1c41554.tar.gz",
 )
 
 http_archive(

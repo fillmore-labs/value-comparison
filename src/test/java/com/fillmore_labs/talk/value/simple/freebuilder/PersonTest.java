@@ -41,7 +41,7 @@ public final class PersonTest {
   }
 
   @Test
-  @SuppressWarnings("nullness:argument")
+  @SuppressWarnings("NullAway")
   public void notNull() {
     assertThrows(NullPointerException.class, () -> Person.builder().givenName(null));
   }

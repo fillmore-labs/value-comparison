@@ -27,14 +27,14 @@ public class EmailAddressTest {
   }
 
   @Test
-  @SuppressWarnings("nullness:argument")
+  @SuppressWarnings("NullAway")
   public void notNull() {
     var ex = assertThrows(NullPointerException.class, () -> EmailAddress.of(null));
     assertThat(ex).hasMessageThat().contains("address");
   }
 
   @Test
-  @SuppressWarnings("nullness:argument")
+  @SuppressWarnings("NullAway")
   public void copyNotNull() {
     var email = EmailAddress.of("peter.pan@example.com");
     var ex = assertThrows(NullPointerException.class, () -> email.copy(null));

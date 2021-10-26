@@ -20,7 +20,7 @@ public class EmailAddressTest {
   }
 
   @Test
-  @SuppressWarnings("nullness:argument")
+  @SuppressWarnings("NullAway")
   public void notNull() {
     var ex = assertThrows(IllegalStateException.class, () -> EmailAddress.of(null));
     assertThat(ex).hasMessageThat().contains("address");

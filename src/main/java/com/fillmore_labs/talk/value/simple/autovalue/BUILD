@@ -3,7 +3,6 @@ load("@rules_java//java:defs.bzl", "java_library")
 java_library(
     name = "autovalue",
     srcs = glob(["*.java"]),
-    javacopts = [],
     visibility = ["//visibility:public"],
     deps = [
         "//toolchain:autovalue",

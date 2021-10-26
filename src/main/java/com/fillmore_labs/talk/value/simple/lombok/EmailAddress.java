@@ -13,7 +13,6 @@ import org.checkerframework.checker.nullness.qual.NonNull;
   "SameNameButDifferent",
   "UnnecessarilyFullyQualified",
   "Var",
-  "allcheckers:type.anno.before",
 })
 @Value(staticConstructor = "of")
 @Immutable

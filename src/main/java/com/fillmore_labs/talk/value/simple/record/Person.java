@@ -7,13 +7,7 @@ import java.util.Optional;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /** Representation of a person. */
-@SuppressWarnings({
-  "nullness:initialization.fields.uninitialized",
-  "optional:optional.field",
-  "optional:optional.parameter",
-  "UnusedVariable",
-  "FieldCanBeStatic"
-})
+@SuppressWarnings({"UnusedVariable", "FieldCanBeStatic"})
 public record Person(String givenName, Optional<String> surname, ImmutableSet<EmailAddress> email) {
   /**
    * Creates a Person.

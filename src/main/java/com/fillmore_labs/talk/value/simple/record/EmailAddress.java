@@ -4,7 +4,7 @@ import com.google.common.base.Preconditions;
 import org.apache.commons.validator.routines.EmailValidator;
 
 /** A (validated) e-mail address. */
-@SuppressWarnings({"nullness:initialization.fields.uninitialized", "UnusedVariable"})
+@SuppressWarnings({"UnusedVariable"})
 public record EmailAddress(String address) {
   private static final EmailValidator EMAIL_VALIDATOR = EmailValidator.getInstance();
 

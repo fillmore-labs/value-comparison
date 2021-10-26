@@ -3,7 +3,6 @@ load("@rules_java//java:defs.bzl", "java_library")
 java_library(
     name = "immutables",
     srcs = glob(["*.java"]),
-    javacopts = [],
     visibility = ["//visibility:public"],
     exports = [
         "//src/main/java/com/fillmore_labs/talk/value/simple/immutables",

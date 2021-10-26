@@ -30,7 +30,7 @@ JAVACOPTS = [
     "-Xep:NoFunctionalReturnType:OFF",
     "-Xep:WildcardImport:OFF",
     "-Xep:ReturnMissingNullable:OFF",
-    "-XepOpt:NullAway:AnnotatedPackages=com.fillmore-labs",
+    "-XepOpt:NullAway:AnnotatedPackages=com.fillmore_labs",
     "-XepOpt:NullAway:CheckOptionalEmptiness=true",
     "-XepOpt:NullAway:HandleTestAssertionLibraries=true",
 ]

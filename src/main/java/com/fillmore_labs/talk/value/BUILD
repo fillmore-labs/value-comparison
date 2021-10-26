@@ -3,8 +3,6 @@ load("@rules_java//java:defs.bzl", "java_library")
 java_library(
     name = "value",
     srcs = glob(["*.java"]),
-    javacopts = [
-    ],
     visibility = ["//visibility:public"],
     deps = [
         "//src/main/java/com/fillmore_labs/talk/value/simple/autovalue",
