@@ -1,0 +1,86 @@
+= Value Objects in Java
+:Author:    Oliver Eikemeier
+:Email:     <eikemeier@fillmore-labs.com>
+:Date:      2021-07
+:Revision:  v0.1
+:toc: macro
+ifdef::env-github[]
+:note-caption: :information_source:
+:tip-caption: :bulb:
+endif::[]
+
+image:https://badge.buildkite.com/13a9640ff1e11890cfcfc26bde3dcc40ffd6617f062e67a35e.svg?branch=main[title="Buildkite build status",link=https://buildkite.com/fillmore-labs/value-objects-in-java]
+
+Demo code about value objects and how to create them in Java.
+
+toc::[]
+
+== Purpose
+
+This source demonstrates how to create value objects in Java using various annotation processors.
+
+== Evaluated Libraries
+
+- https://github.com/google/auto/blob/master/value/userguide/index.md[AutoValue]
+- https://freebuilder.inferred.org[FreeBuilder]
+- https://immutables.github.io[Immutables]
+- https://projectlombok.org[Project Lombok]
+
+Also, simple https://docs.oracle.com/en/java/javase/16/language/records.html[record classes] and
+https://www.scala-lang.org[Scala] examples are included for demonstration purposes.
+
+== Structure
+
+In `+com.fillmore_labs.talk.value.simple.*+` we have simple classes, one `+EmailAddress+` which
+demonstrates the power of being able to check value objects for consistency during construction and
+`+Person+`, which show how different libraries handle optional parameters and documentation
+propagation.
+
+`+com.fillmore_labs.talk.value.inheritance.*+` and `+com.fillmore_labs.talk.value.composition.*+` demonstrates
+the https://en.wikipedia.org/wiki/Composition_over_inheritance[composition over inheritance]
+principle and why value objects can not meaningfully extend each other.
+
+== Running
+
+=== Prerequisites
+
+You need https://github.com/bazelbuild/bazelisk[Bazelisk] installed, with https://brew.sh[HomeBrew]
+just use [source,shell]`brew install bazelbuild/tap/bazelisk`.
+See also https://docs.bazel.build/versions/master/install-bazelisk.html[Installing Bazel using
+Bazelisk].
+
+=== Main App
+
+The main app simply demonstrates the `toString()` method with a simple structure.
+Run it with
+
+[source,shell]
+----
+bazel run //:value-comparison
+----
+
+=== Tests
+
+To run all tests, use
+
+[source,shell]
+----
+bazel test //...
+----
+
+[bibliography]
+== References
+
+* Joshua Bloch.
+https://www.pearson.com/us/higher-education/program/Bloch-Effective-Java-3rd-Edition/PGM1763855.html[Effective Java, 3rd Edition].
+Addison-Wesley Professional. 2018.
+
+* Martin Odersky, Lex Spoon, Bill Venners. https://www.artima.com/lejava/articles/equality.html[How to Write an Equality Method in Java]. 2009
+
+* Dan Bergh Johnsson.
+https://www.infoq.com/presentations/Value-Objects-Dan-Bergh-Johnsson/[Power of Value - Power Use of
+Value Objects in Domain Driven Design]. QCon London. 2009.
+
+* Brian Goetz. https://cr.openjdk.java.net/~briangoetz/amber/datum.html[Data Classes and Sealed Types for Java]. 2019.
+
+* JEP 395. https://openjdk.java.net/jeps/395[Records]. 2020.
