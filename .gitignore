@@ -5,6 +5,7 @@
 !/.envrc
 !/.gitattributes
 !/.gitignore
+!/.scalafmt.conf
 !/.yamllint
 !/.github/
 !/.buildkite/

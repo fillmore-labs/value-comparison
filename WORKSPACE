@@ -71,13 +71,6 @@ http_archive(
 )
 
 http_archive(
-    name = "com_google_dagger",
-    sha256 = "c4629103cb06caba62d8ab0acde1658b4678c7b3b4ce69a2f33d9e0d7022c4b7",
-    strip_prefix = "dagger-dagger-2.39.1",
-    urls = ["https://github.com/google/dagger/archive/dagger-2.39.1.tar.gz"],
-)
-
-http_archive(
     name = "google_bazel_common",
     sha256 = "10da34d97f282b60078e472407a23fb505565cf398da578b800572ccce20b468",
     strip_prefix = "bazel-common-efc6731b1d72535f3009061af87538a0a826f3fc",
@@ -139,15 +132,17 @@ rules_jvm_external_setup()
 
 load("@io_bazel_rules_scala//:scala_config.bzl", "scala_config")
 
-scala_config(scala_version = "2.13.6")
+scala_config(scala_version = "2.13.7")
 
 load("@io_bazel_rules_scala//scala:scala.bzl", "scala_repositories")
 
 scala_repositories()
 
-load("@io_bazel_rules_scala//scala:toolchains.bzl", "scala_register_toolchains")
+load("@io_bazel_rules_scala//scala:toolchains.bzl", "scala_register_toolchains", "scala_register_unused_deps_toolchains")
 
 scala_register_toolchains()
+
+scala_register_unused_deps_toolchains()
 
 # ---
 
@@ -180,7 +175,7 @@ maven_install(
         "com.google.guava:guava:31.0.1-jre",
         "com.uber.nullaway:nullaway:0.9.2",
         "commons-validator:commons-validator:1.7",
-        "org.checkerframework:checker-qual:3.18.1",
+        "org.checkerframework:checker-qual:3.19.0",
         "org.immutables:value-annotations:2.9.0-rc1",
         "org.immutables:value-processor:2.9.0-rc1",
         "org.inferred:freebuilder:2.7.0",
