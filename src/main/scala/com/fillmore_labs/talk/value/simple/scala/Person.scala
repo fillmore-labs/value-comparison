@@ -25,29 +25,11 @@ object Person {
     )
 }
 
-final case class Person(
+final case class Person private (
     givenName: String,
     surname: Option[String] = None,
     email: immutable.Set[EmailAddress] = Set.empty
 ) {
-
-  /** Java API: Construct a person
-    *
-    * @param givenName The given name. Required.
-    * @param surname   The surname. Optional, i.e for royalty.
-    * @param email     Email addresses this person is reachable under. Optional.
-    */
-  def this(
-      givenName: String,
-      @Nullable surname: String,
-      @Nullable email: java.lang.Iterable[EmailAddress]
-  ) = {
-    this(
-      util.Objects.requireNonNull(givenName),
-      Option(surname),
-      if (email == null) Set.empty[EmailAddress] else Set.from(email.asScala)
-    )
-  }
 
   /** Java API: The given name of this person. Everyone has one.
     *
