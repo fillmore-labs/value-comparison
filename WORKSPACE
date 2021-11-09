@@ -141,24 +141,24 @@ load("@io_bazel_rules_scala//scala:scala.bzl", "scala_repositories")
 scala_repositories(
     fetch_sources = True,
     overriden_artifacts = {
+        "io_bazel_rules_scala_scala_compiler": {
+            "artifact": "org.scala-lang:scala-compiler:2.13.7",
+            "deps": [
+                "@io_bazel_rules_scala_scala_library",
+                "@io_bazel_rules_scala_scala_reflect",
+            ],
+            "sha256": "a450602f03a4686919e60d1aeced549559f1eaffbaf30ffa7987c8d97e3e79a9",
+        },
         "io_bazel_rules_scala_scala_library": {
             "artifact": "org.scala-lang:scala-library:2.13.7",
             "sha256": "a8bc08f3b9ff93d0496032bf2677163071b8d212992f41dbf04212e07d91616b",
         },
         "io_bazel_rules_scala_scala_reflect": {
             "artifact": "org.scala-lang:scala-reflect:2.13.7",
+            "deps": [
+                "@io_bazel_rules_scala_scala_library",
+            ],
             "sha256": "a7bc4eca6970083d426a8d081aec313c7b7207d5f83b6724995e34078edc5cbb",
-            "deps": [
-                "@io_bazel_rules_scala_scala_library",
-            ],
-        },
-        "io_bazel_rules_scala_scala_compiler": {
-            "artifact": "org.scala-lang:scala-compiler:2.13.7",
-            "sha256": "a450602f03a4686919e60d1aeced549559f1eaffbaf30ffa7987c8d97e3e79a9",
-            "deps": [
-                "@io_bazel_rules_scala_scala_library",
-                "@io_bazel_rules_scala_scala_reflect",
-            ],
         },
     },
 )
@@ -233,9 +233,9 @@ maven_install(
     fetch_sources = True,
     maven_install_json = "//:maven_install.json",
     override_targets = {
+        "org.scala-lang:scala-compiler": "@io_bazel_rules_scala_scala_compiler",
         "org.scala-lang:scala-library": "@io_bazel_rules_scala_scala_library",
         "org.scala-lang:scala-reflect": "@io_bazel_rules_scala_scala_reflect",
-        "org.scala-lang:scala-compiler": "@io_bazel_rules_scala_scala_compiler",
     },
     repositories = [
         "https://repo1.maven.org/maven2",

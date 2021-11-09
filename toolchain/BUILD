@@ -1,6 +1,6 @@
 load("@bazel_tools//tools/jdk:default_java_toolchain.bzl", "default_java_toolchain")
-load("@rules_java//java:defs.bzl", "java_library", "java_package_configuration", "java_plugin")
 load("@io_bazel_rules_scala//scala:scala_toolchain.bzl", "scala_toolchain")
+load("@rules_java//java:defs.bzl", "java_library", "java_package_configuration", "java_plugin")
 
 default_java_toolchain(
     name = "toolchain_java17",
