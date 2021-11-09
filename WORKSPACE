@@ -2,6 +2,8 @@ workspace(name = "com_fillmore_labs_value_comparison")
 
 register_toolchains("//toolchain:toolchain_java17_definition")
 
+register_toolchains("//toolchain:scala213_toolchain")
+
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 # ---
@@ -136,7 +138,30 @@ scala_config(scala_version = "2.13.7")
 
 load("@io_bazel_rules_scala//scala:scala.bzl", "scala_repositories")
 
-scala_repositories()
+scala_repositories(
+    fetch_sources = True,
+    overriden_artifacts = {
+        "io_bazel_rules_scala_scala_library": {
+            "artifact": "org.scala-lang:scala-library:2.13.7",
+            "sha256": "a8bc08f3b9ff93d0496032bf2677163071b8d212992f41dbf04212e07d91616b",
+        },
+        "io_bazel_rules_scala_scala_reflect": {
+            "artifact": "org.scala-lang:scala-reflect:2.13.7",
+            "sha256": "a7bc4eca6970083d426a8d081aec313c7b7207d5f83b6724995e34078edc5cbb",
+            "deps": [
+                "@io_bazel_rules_scala_scala_library",
+            ],
+        },
+        "io_bazel_rules_scala_scala_compiler": {
+            "artifact": "org.scala-lang:scala-compiler:2.13.7",
+            "sha256": "a450602f03a4686919e60d1aeced549559f1eaffbaf30ffa7987c8d97e3e79a9",
+            "deps": [
+                "@io_bazel_rules_scala_scala_library",
+                "@io_bazel_rules_scala_scala_reflect",
+            ],
+        },
+    },
+)
 
 load("@io_bazel_rules_scala//scala:toolchains.bzl", "scala_register_toolchains", "scala_register_unused_deps_toolchains")
 
@@ -169,7 +194,7 @@ maven_install(
     artifacts = [
         "com.google.auto.value:auto-value-annotations:1.8.2",
         "com.google.auto.value:auto-value:1.8.2",
-        "com.google.errorprone:error_prone_annotations:2.9.0",
+        "com.google.errorprone:error_prone_annotations:2.10.0",
         "com.google.flogger:flogger-system-backend:0.7.1",
         "com.google.flogger:flogger:0.7.1",
         "com.google.guava:guava:31.0.1-jre",
@@ -206,7 +231,12 @@ maven_install(
         ),
     ],
     fetch_sources = True,
-    maven_install_json = "@com_fillmore_labs_value_comparison//:maven_install.json",
+    maven_install_json = "//:maven_install.json",
+    override_targets = {
+        "org.scala-lang:scala-library": "@io_bazel_rules_scala_scala_library",
+        "org.scala-lang:scala-reflect": "@io_bazel_rules_scala_scala_reflect",
+        "org.scala-lang:scala-compiler": "@io_bazel_rules_scala_scala_compiler",
+    },
     repositories = [
         "https://repo1.maven.org/maven2",
         "https://repo.maven.apache.org/maven2",

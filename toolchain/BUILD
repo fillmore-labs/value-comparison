@@ -1,5 +1,6 @@
 load("@bazel_tools//tools/jdk:default_java_toolchain.bzl", "default_java_toolchain")
 load("@rules_java//java:defs.bzl", "java_library", "java_package_configuration", "java_plugin")
+load("@io_bazel_rules_scala//scala:scala_toolchain.bzl", "scala_toolchain")
 
 default_java_toolchain(
     name = "toolchain_java17",
@@ -60,6 +61,20 @@ package_group(
         "-//src/...",
         "//...",
     ],
+)
+
+scala_toolchain(
+    name = "toolchain_scala213",
+    scalacopts = ["-Xsource:3"],
+    unused_dependency_checker_mode = "warn",
+    visibility = ["//visibility:public"],
+)
+
+toolchain(
+    name = "scala213_toolchain",
+    toolchain = "toolchain_scala213",
+    toolchain_type = "@io_bazel_rules_scala//scala:toolchain_type",
+    visibility = ["//visibility:public"],
 )
 
 # ---
