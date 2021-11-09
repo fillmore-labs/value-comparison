@@ -1,9 +1,6 @@
 # Lombok workaround: https://github.com/bazelbuild/bazel/issues/12837
 build --nojava_header_compilation
 
-# Needed for scala_library_for_plugin_bootstrapping in rules_scala
-build --incompatible_java_common_parameters=false
-
 build --java_language_version=17
 build --tool_java_runtime_version=remotejdk_17
 
