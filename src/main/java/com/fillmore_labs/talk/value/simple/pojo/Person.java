@@ -1,11 +1,11 @@
 package com.fillmore_labs.talk.value.simple.pojo;
 
+import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableSet;
 import com.google.errorprone.annotations.Immutable;
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.Optional;
-import java.util.StringJoiner;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /** Representation of a person. */
@@ -17,18 +17,10 @@ public final class Person {
 
   private final ImmutableSet<EmailAddress> email;
 
-  /**
-   * Creates a Person.
-   *
-   * @param givenName Set the given name. Required.
-   * @param surname Set the surname. Optional, i.e for royalty.
-   * @param email Email addresses this person is reachable under. Optional.
-   */
-  public Person(
-      String givenName, @Nullable String surname, @Nullable Iterable<EmailAddress> email) {
+  private Person(String givenName, @Nullable String surname, Iterable<EmailAddress> email) {
     this.givenName = Objects.requireNonNull(givenName, "givenName is a required parameter");
     this.surname = surname;
-    this.email = email == null ? ImmutableSet.of() : ImmutableSet.copyOf(email);
+    this.email = ImmutableSet.copyOf(email);
   }
 
   /**
@@ -89,14 +81,10 @@ public final class Person {
 
   @Override
   public String toString() {
-    var emails =
-        email.stream()
-            .reduce(
-                new StringJoiner(", "),
-                (joiner, address) -> joiner.add(address.toString()),
-                StringJoiner::merge);
-    return String.format(
-        "Person(givenName=%s surname=%s email=[%s])",
-        givenName, surname == null ? "(null)" : surname, emails);
+    return MoreObjects.toStringHelper(this)
+        .add("givenName", givenName)
+        .add("surname", surname)
+        .add("email", email)
+        .toString();
   }
 }

@@ -1,5 +1,6 @@
 package com.fillmore_labs.talk.value.simple.pojo;
 
+import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.errorprone.annotations.Immutable;
 import java.util.Objects;
@@ -50,6 +51,6 @@ public final class EmailAddress {
 
   @Override
   public String toString() {
-    return String.format("EmailAddress(address=%s)", address);
+    return MoreObjects.toStringHelper(this).add("address", address).toString();
   }
 }
