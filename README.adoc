@@ -10,6 +10,7 @@ ifdef::env-github[]
 endif::[]
 
 image:https://badge.buildkite.com/13a9640ff1e11890cfcfc26bde3dcc40ffd6617f062e67a35e.svg?branch=main[title="Buildkite build status",link=https://buildkite.com/fillmore-labs/value-objects-in-java]
+image:https://codecov.io/gh/fillmore-labs/value-comparison/branch/main/graph/badge.svg?token=4KRPCM9FRT[title="Codecov test coverage",link=https://codecov.io/gh/fillmore-labs/value-comparison]
 
 Demo code about value objects and how to create them in Java.
 

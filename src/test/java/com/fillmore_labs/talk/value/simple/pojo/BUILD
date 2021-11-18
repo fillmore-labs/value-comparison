@@ -9,6 +9,7 @@ java_library(
         "//toolchain:nullaway",
         "//toolchain:truth",
         "@maven//:com_google_guava_guava",
+        "@maven//:nl_jqno_equalsverifier_equalsverifier",
     ],
 )
 

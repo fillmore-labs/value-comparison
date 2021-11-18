@@ -3,6 +3,7 @@ package com.fillmore_labs.talk.value.simple.pojo;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertThrows;
 
+import nl.jqno.equalsverifier.EqualsVerifier;
 import org.junit.Test;
 
 public class EmailAddressTest {
@@ -24,5 +25,17 @@ public class EmailAddressTest {
   public void notNull() {
     var ex = assertThrows(IllegalStateException.class, () -> EmailAddress.of(null));
     assertThat(ex).hasMessageThat().contains("address");
+  }
+
+  @Test
+  public void equals() {
+    EqualsVerifier.forClass(EmailAddress.class).withNonnullFields("address").verify();
+  }
+
+  @Test
+  public void string() {
+    var email = EmailAddress.of("peter.pan@example.com");
+
+    assertThat(email.toString()).isNotEmpty();
   }
 }

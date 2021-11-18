@@ -224,6 +224,12 @@ maven_install(
             testonly = True,
         ),
         maven.artifact(
+            "nl.jqno.equalsverifier",
+            "equalsverifier",
+            "3.7.2",
+            testonly = True,
+        ),
+        maven.artifact(
             "org.ow2.asm",
             "asm",
             "9.2",
