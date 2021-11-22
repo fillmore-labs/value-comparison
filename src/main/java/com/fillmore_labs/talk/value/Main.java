@@ -13,12 +13,12 @@ public final class Main {
   private Main() {}
 
   public static void main(String... args) {
-    logger.atInfo().log("Autovalue: %s", Autovalue.autovalue());
-    logger.atInfo().log("FreeBuilder: %s", FreeBuilder.freebuilder());
-    logger.atInfo().log("Immutables: %s", Immutables.immutables());
-    logger.atInfo().log("Lombok: %s", Lombok.lombok());
-    logger.atInfo().log("Pojo: %s", Pojo.pojo());
-    logger.atInfo().log("Record: %s", Records.record());
-    logger.atInfo().log("Scala: %s", Scala.scala());
+    logger.atInfo().log("Autovalue: %s", AutovalueHelper.person());
+    logger.atInfo().log("FreeBuilder: %s", FreeBuilderHelper.person());
+    logger.atInfo().log("Immutables: %s", ImmutablesHelper.person());
+    logger.atInfo().log("Lombok: %s", LombokHelper.person());
+    logger.atInfo().log("Pojo: %s", PojoHelper.person());
+    logger.atInfo().log("Record: %s", RecordHelper.person());
+    logger.atInfo().log("Scala: %s", ScalaHelper.person());
   }
 }

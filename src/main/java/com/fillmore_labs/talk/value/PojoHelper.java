@@ -2,10 +2,10 @@ package com.fillmore_labs.talk.value;
 
 import com.fillmore_labs.talk.value.simple.pojo.Person;
 
-public final class Pojo {
-  private Pojo() {}
+public final class PojoHelper {
+  private PojoHelper() {}
 
-  public static Person pojo() {
+  public static Person person() {
     return Person.of(Main.GIVEN_NAME, Main.SURNAME, Main.EMAIL, Main.EMAIL2);
   }
 }

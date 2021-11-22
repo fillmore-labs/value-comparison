@@ -2,10 +2,10 @@ package com.fillmore_labs.talk.value;
 
 import com.fillmore_labs.talk.value.simple.immutables.Person;
 
-public final class Immutables {
-  private Immutables() {}
+public final class ImmutablesHelper {
+  private ImmutablesHelper() {}
 
-  public static Person immutables() {
+  public static Person person() {
     return Person.builder()
         .givenName(Main.GIVEN_NAME)
         .surname(Main.SURNAME)
