@@ -45,8 +45,9 @@ public final class EmailAddress {
   }
 
   @Override
+  @SuppressWarnings("OperatorPrecedence")
   public boolean equals(@Nullable Object obj) {
-    return obj == this || (obj instanceof EmailAddress e && address.equals(e.address));
+    return obj == this || obj instanceof EmailAddress e && address.equals(e.address);
   }
 
   @Override

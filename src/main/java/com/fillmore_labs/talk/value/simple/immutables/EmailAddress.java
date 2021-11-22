@@ -37,7 +37,7 @@ public abstract class EmailAddress {
   public abstract String address();
 
   @Value.Check
-  /* package */ void check() {
+  /* package */ final void check() {
     var address = address();
     Preconditions.checkState(
         EMAIL_VALIDATOR.isValid(address), "%s is not a valid e-mail address", address);
