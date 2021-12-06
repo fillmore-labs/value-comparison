@@ -1,8 +1,8 @@
 = Value Objects in Java
 :Author:    Oliver Eikemeier
 :Email:     <eikemeier@fillmore-labs.com>
-:Date:      2021-07
-:Revision:  v0.1
+:Date:      2021-12
+:Revision:  v0.1.1
 :toc: macro
 ifdef::env-github[]
 :note-caption: :information_source:
@@ -28,8 +28,9 @@ This source demonstrates how to create value objects in Java using various annot
 - https://immutables.github.io[Immutables]
 - https://projectlombok.org[Project Lombok]
 
-Also, simple https://docs.oracle.com/en/java/javase/16/language/records.html[record classes] and
-https://www.scala-lang.org[Scala] examples are included for demonstration purposes.
+Also, simple https://docs.oracle.com/en/java/javase/17/language/records.html[record classes] and
+https://docs.scala-lang.org/tour/case-classes.html[Scala case class] examples are included for
+demonstration purposes.
 
 == Structure
 
@@ -47,9 +48,9 @@ principle and why value objects can not meaningfully extend each other.
 === Prerequisites
 
 You need https://github.com/bazelbuild/bazelisk[Bazelisk] installed, with https://brew.sh[HomeBrew]
-just use [source,shell]`brew install bazelbuild/tap/bazelisk`.
-See also https://docs.bazel.build/versions/master/install-bazelisk.html[Installing Bazel using
-Bazelisk].
+just use [source,shell]`brew install bazelbuild/tap/bazelisk`, on Windows use
+https://chocolatey.org[Chocolatey] and [source,shell]`choco install bazelisk`, sse also
+https://docs.bazel.build/versions/main/install-bazelisk.html[Installing Bazel using Bazelisk].
 
 === Main App
 
@@ -58,7 +59,7 @@ Run it with
 
 [source,shell]
 ----
-bazel run //:value-comparison
+bazelisk run //:value-comparison
 ----
 
 === Tests
@@ -67,7 +68,7 @@ To run all tests, use
 
 [source,shell]
 ----
-bazel test //...
+bazelisk test //...
 ----
 
 [bibliography]

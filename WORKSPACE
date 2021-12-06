@@ -82,9 +82,9 @@ http_archive(
 
 http_archive(
     name = "com_google_protobuf",
-    sha256 = "4a045294ec76cb6eae990a21adb5d8b3c78be486f1507faa601541d1ccefbd6b",
-    strip_prefix = "protobuf-3.19.0",
-    urls = ["https://github.com/protocolbuffers/protobuf/archive/refs/tags/v3.19.0.tar.gz"],
+    sha256 = "87407cd28e7a9c95d9f61a098a53cf031109d451a7763e7dd1253abf8b4df422",
+    strip_prefix = "protobuf-3.19.1",
+    urls = ["https://github.com/protocolbuffers/protobuf/archive/refs/tags/v3.19.1.tar.gz"],
 )
 
 http_archive(
@@ -95,17 +95,10 @@ http_archive(
 )
 
 http_archive(
-    name = "io_bazel_rules_docker",
-    sha256 = "4349f2b0b45c860dd2ffe18802e9f79183806af93ce5921fb12cbd6c07ab69a8",
-    strip_prefix = "rules_docker-0.21.0",
-    urls = ["https://github.com/bazelbuild/rules_docker/releases/download/v0.21.0/rules_docker-v0.21.0.tar.gz"],
-)
-
-http_archive(
     name = "rules_jvm_external",
-    sha256 = "995ea6b5f41e14e1a17088b727dcff342b2c6534104e73d6f06f1ae0422c2308",
-    strip_prefix = "rules_jvm_external-4.1",
-    url = "https://github.com/bazelbuild/rules_jvm_external/archive/4.1.tar.gz",
+    sha256 = "2cd77de091e5376afaf9cc391c15f093ebd0105192373b334f0a855d89092ad5",
+    strip_prefix = "rules_jvm_external-4.2",
+    url = "https://github.com/bazelbuild/rules_jvm_external/archive/4.2.tar.gz",
 )
 
 http_archive(
@@ -262,7 +255,7 @@ maven_install(
         maven.artifact(
             "nl.jqno.equalsverifier",
             "equalsverifier",
-            "3.7.2",
+            "3.8",
             testonly = True,
         ),
         maven.artifact(
