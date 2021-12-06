@@ -47,7 +47,7 @@ principle and why value objects can not meaningfully extend each other.
 
 === Prerequisites
 
-You need https://github.com/bazelbuild/bazelisk[Bazelisk] installed, sse also
+You need https://github.com/bazelbuild/bazelisk[Bazelisk] installed, see also
 https://docs.bazel.build/versions/main/install-bazelisk.html[Installing Bazel using Bazelisk].
 
 ==== macOS
@@ -64,11 +64,13 @@ Using https://chocolatey.org[Chocolatey] enter
 [source,shell]
 choco install bazelisk
 
-You need to enable developer mode (or run with administrator privileges):
+Enable developer mode:
 
 . Open Windows settings
 . Go to “Update & security”, then “For developers”
 . Under “Developer Mode” section enable “Install apps from any source, including loose files”.
+
+or run with administrator privileges.
 
 === Main App
 
