@@ -107,6 +107,12 @@ java_plugin(
 )
 
 java_plugin(
+    name = "auto_builder_processor",
+    processor_class = "com.google.auto.value.processor.AutoBuilderProcessor",
+    deps = ["@maven//:com_google_auto_value_auto_value"],
+)
+
+java_plugin(
     name = "auto_oneof_processor",
     processor_class = "com.google.auto.value.processor.AutoOneOfProcessor",
     deps = ["@maven//:com_google_auto_value_auto_value"],
@@ -122,6 +128,7 @@ java_library(
     name = "autovalue",
     exported_plugins = [
         "auto_value_processor",
+        "auto_builder_processor",
         "auto_oneof_processor",
         "auto_annotation_processor",
     ],

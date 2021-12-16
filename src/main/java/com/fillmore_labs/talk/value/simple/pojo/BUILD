@@ -5,6 +5,7 @@ java_library(
     srcs = glob(["*.java"]),
     visibility = ["//visibility:public"],
     deps = [
+        "//toolchain:autovalue",
         "//toolchain:nullaway",
         "@maven//:com_google_code_findbugs_jsr305",
         "@maven//:com_google_guava_guava",

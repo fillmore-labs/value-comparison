@@ -3,7 +3,6 @@ package com.fillmore_labs.talk.value.simple.pojo;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableSet;
 import com.google.errorprone.annotations.Immutable;
-import java.util.Arrays;
 import java.util.Objects;
 import java.util.Optional;
 import org.checkerframework.checker.nullness.qual.Nullable;
@@ -17,25 +16,19 @@ public final class Person {
 
   private final ImmutableSet<EmailAddress> email;
 
-  private Person(String givenName, @Nullable String surname, Iterable<EmailAddress> email) {
+  /* package */ Person(String givenName, @Nullable String surname, Iterable<EmailAddress> email) {
     this.givenName = Objects.requireNonNull(givenName, "givenName is a required parameter");
     this.surname = surname;
     this.email = ImmutableSet.copyOf(email);
   }
 
   /**
-   * Creates a Person.
+   * Creates a Person builder.
    *
-   * @param givenName Set the given name. Required.
-   * @param surname Set the surname. Optional, i.e for royalty.
-   * @param email Email addresses this person is reachable under. Optional.
-   * @return A person.
+   * @return A new fluent builder
    */
-  public static Person of(String givenName, @Nullable String surname, String... email) {
-    return new Person(
-        givenName,
-        surname,
-        Arrays.stream(email).map(EmailAddress::of).collect(ImmutableSet.toImmutableSet()));
+  public static PersonBuilder builder() {
+    return PersonBuilder.builder();
   }
 
   /**

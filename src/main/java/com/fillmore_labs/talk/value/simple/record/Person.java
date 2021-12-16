@@ -1,10 +1,8 @@
 package com.fillmore_labs.talk.value.simple.record;
 
 import com.google.common.collect.ImmutableSet;
-import java.util.Arrays;
 import java.util.Objects;
 import java.util.Optional;
-import org.checkerframework.checker.nullness.qual.Nullable;
 
 /** Representation of a person. */
 @SuppressWarnings({"UnusedVariable", "FieldCanBeStatic"})
@@ -23,17 +21,11 @@ public record Person(String givenName, Optional<String> surname, ImmutableSet<Em
   }
 
   /**
-   * Creates a Person.
+   * Creates a Person builder.
    *
-   * @param givenName Set the given name. Required.
-   * @param surname Set the surname. Optional, i.e for royalty.
-   * @param email Email addresses this person is reachable under. Optional.
-   * @return A person.
+   * @return A new fluent builder
    */
-  public static Person of(String givenName, @Nullable String surname, String... email) {
-    return new Person(
-        givenName,
-        Optional.ofNullable(surname),
-        Arrays.stream(email).map(EmailAddress::of).collect(ImmutableSet.toImmutableSet()));
+  public static PersonBuilder builder() {
+    return PersonBuilder.builder();
   }
 }

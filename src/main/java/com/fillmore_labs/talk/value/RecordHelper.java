@@ -6,6 +6,10 @@ public final class RecordHelper {
   private RecordHelper() {}
 
   public static Person person() {
-    return Person.of(Main.GIVEN_NAME, Main.SURNAME, Main.EMAIL, Main.EMAIL2);
+    return Person.builder()
+        .givenName(Main.GIVEN_NAME)
+        .surname(Main.SURNAME)
+        .email(Main.EMAIL, Main.EMAIL2)
+        .build();
   }
 }

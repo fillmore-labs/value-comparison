@@ -9,7 +9,8 @@ import org.junit.Test;
 public final class PersonTest {
   @Test
   public void creation() {
-    var person = Person.of("Peter", "Pan", "peter.pan@example.com");
+    var person =
+        Person.builder().givenName("Peter").surname("Pan").email("peter.pan@example.com").build();
 
     assertThat(person.givenName()).isEqualTo("Peter");
 
@@ -20,7 +21,7 @@ public final class PersonTest {
 
   @Test
   public void defaults() {
-    var person = Person.of("Charles", null);
+    var person = Person.builder().givenName("Charles").build();
 
     assertThat(person.givenName()).isEqualTo("Charles");
 
@@ -32,6 +33,6 @@ public final class PersonTest {
   @Test
   @SuppressWarnings("NullAway")
   public void notNull() {
-    assertThrows(NullPointerException.class, () -> Person.of(null, null));
+    assertThrows(NullPointerException.class, () -> Person.builder().givenName(null).build());
   }
 }
