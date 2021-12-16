@@ -221,11 +221,11 @@ load("//toolchain:defs.bzl", "testonly_artifacts")
 
 maven_install(
     artifacts = [
-        "com.google.auto.value:auto-value-annotations:1.8.2",
-        "com.google.auto.value:auto-value:1.8.2",
+        "com.google.auto.value:auto-value-annotations:1.9",
+        "com.google.auto.value:auto-value:1.9",
         "com.google.errorprone:error_prone_annotations:2.10.0",
-        "com.google.flogger:flogger-system-backend:0.7.2",
-        "com.google.flogger:flogger:0.7.2",
+        "com.google.flogger:flogger-system-backend:0.7.3",
+        "com.google.flogger:flogger:0.7.3",
         "com.google.guava:guava:31.0.1-jre",
         "com.uber.nullaway:nullaway:0.9.2",
         "commons-validator:commons-validator:1.7",
@@ -238,7 +238,7 @@ maven_install(
         "com.google.truth.extensions:truth-java8-extension:1.1.3",
         "com.google.truth:truth:1.1.3",
         "junit:junit:4.13.2",
-        "nl.jqno.equalsverifier:equalsverifier:3.8",
+        "nl.jqno.equalsverifier:equalsverifier:3.8.1",
     ]),
     fetch_sources = True,
     maven_install_json = "//:maven_install.json",
