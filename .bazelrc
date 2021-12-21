@@ -5,4 +5,10 @@ build --enable_runfiles
 
 coverage --instrumentation_filter "^//src/main/[^/]+/com/fillmore_labs[/:]"
 
+build:ci --noshow_progress
+build:ci --output_filter=^//
+test:ci --test_output=errors
+coverage:ci --test_summary=terse
+coverage:ci --combined_report=lcov
+
 try-import %workspace%/user.bazelrc
