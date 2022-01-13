@@ -18,42 +18,6 @@ http_archive(
 )
 
 http_archive(
-    name = "remote_java_tools",
-    sha256 = "a7ac5922ee01e8b8fcb546ffc264ef314d0a0c679328b7fa4c432e5f54a86067",
-    urls = [
-        "https://github.com/bazelbuild/java_tools/releases/download/java_v11.6/java_tools-v11.6.zip",
-        "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.6/java_tools-v11.6.zip",
-    ],
-)
-
-http_archive(
-    name = "remote_java_tools_darwin",
-    sha256 = "f17ee54582b61f1ebd84c8fa2c54df796914cfbaac3cb821fb1286b55b080bc0",
-    urls = [
-        "https://github.com/bazelbuild/java_tools/releases/download/java_v11.6/java_tools_darwin-v11.6.zip",
-        "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.6/java_tools_darwin-v11.6.zip",
-    ],
-)
-
-http_archive(
-    name = "remote_java_tools_linux",
-    sha256 = "15da4f84a7d39cd179acf3035d9def638eea6ba89a0ed8f4e8a8e6e1d6c8e328",
-    urls = [
-        "https://github.com/bazelbuild/java_tools/releases/download/java_v11.6/java_tools_linux-v11.6.zip",
-        "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.6/java_tools_linux-v11.6.zip",
-    ],
-)
-
-http_archive(
-    name = "remote_java_tools_windows",
-    sha256 = "939f9d91f0df02851bbad8f5b1d26d24011329394cafe5668c1234e31ac2a1f7",
-    urls = [
-        "https://github.com/bazelbuild/java_tools/releases/download/java_v11.6/java_tools_windows-v11.6.zip",
-        "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.6/java_tools_windows-v11.6.zip",
-    ],
-)
-
-http_archive(
     name = "io_bazel_rules_go",
     sha256 = "2b1641428dff9018f9e85c0384f03ec6c10660d935b750e3fa1492a281a53b0f",
     urls = [
@@ -75,23 +39,21 @@ http_archive(
     name = "rules_proto",
     sha256 = "66bfdf8782796239d3875d37e7de19b1d94301e8972b3cbd2446b332429b4df1",
     strip_prefix = "rules_proto-4.0.0",
-    urls = [
-        "https://github.com/bazelbuild/rules_proto/archive/refs/tags/4.0.0.tar.gz",
-    ],
+    url = "https://github.com/bazelbuild/rules_proto/archive/refs/tags/4.0.0.tar.gz",
 )
 
 http_archive(
     name = "com_google_protobuf",
-    sha256 = "87407cd28e7a9c95d9f61a098a53cf031109d451a7763e7dd1253abf8b4df422",
-    strip_prefix = "protobuf-3.19.1",
-    urls = ["https://github.com/protocolbuffers/protobuf/archive/refs/tags/v3.19.1.tar.gz"],
+    sha256 = "390191a0d7884b3e52bb812c440ad1497b9d484241f37bb8e2ccc8c2b72d6c36",
+    strip_prefix = "protobuf-3.19.3",
+    url = "https://github.com/protocolbuffers/protobuf/archive/refs/tags/v3.19.3.tar.gz",
 )
 
 http_archive(
     name = "com_github_bazelbuild_buildtools",
-    sha256 = "ae34c344514e08c23e90da0e2d6cb700fcd28e80c02e23e4d5715dddcb42f7b3",
-    strip_prefix = "buildtools-4.2.2",
-    url = "https://github.com/bazelbuild/buildtools/archive/refs/tags/4.2.2.tar.gz",
+    sha256 = "d368c47bbfc055010f118efb2962987475418737e901f7782d2a966d1dc80296",
+    strip_prefix = "buildtools-4.2.5",
+    url = "https://github.com/bazelbuild/buildtools/archive/refs/tags/4.2.5.tar.gz",
 )
 
 http_archive(
@@ -105,7 +67,7 @@ http_archive(
     name = "google_bazel_common",
     sha256 = "aba51647747aaf67d96397a6007ef81186a7f4a427cab0b1ad5c6131d0228bcc",
     strip_prefix = "bazel-common-2e42988b7a3d1e3b11ab4db2d7c28f794500a672",
-    urls = ["https://github.com/google/bazel-common/archive/2e42988b7a3d1e3b11ab4db2d7c28f794500a672.tar.gz"],
+    url = "https://github.com/google/bazel-common/archive/2e42988b7a3d1e3b11ab4db2d7c28f794500a672.tar.gz",
 )
 
 http_archive(
@@ -131,7 +93,7 @@ bazel_skylib_workspace()
 
 load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_dependencies")
 
-go_register_toolchains(go_version = "1.17.3")
+go_register_toolchains(go_version = "1.17.6")
 
 go_rules_dependencies()
 
@@ -227,9 +189,9 @@ maven_install(
         "com.google.flogger:flogger-system-backend:0.7.4",
         "com.google.flogger:flogger:0.7.4",
         "com.google.guava:guava:31.0.1-jre",
-        "com.uber.nullaway:nullaway:0.9.2",
+        "com.uber.nullaway:nullaway:0.9.5",
         "commons-validator:commons-validator:1.7",
-        "org.checkerframework:checker-qual:3.21.0",
+        "org.checkerframework:checker-qual:3.21.1",
         "org.immutables:value-annotations:2.9.0-rc1",
         "org.immutables:value-processor:2.9.0-rc1",
         "org.inferred:freebuilder:2.7.0",
@@ -238,7 +200,7 @@ maven_install(
         "com.google.truth.extensions:truth-java8-extension:1.1.3",
         "com.google.truth:truth:1.1.3",
         "junit:junit:4.13.2",
-        "nl.jqno.equalsverifier:equalsverifier:3.8.1",
+        "nl.jqno.equalsverifier:equalsverifier:3.8.2",
     ]),
     fetch_sources = True,
     maven_install_json = "//:maven_install.json",
