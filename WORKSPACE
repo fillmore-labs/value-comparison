@@ -44,16 +44,16 @@ http_archive(
 
 http_archive(
     name = "com_google_protobuf",
-    sha256 = "390191a0d7884b3e52bb812c440ad1497b9d484241f37bb8e2ccc8c2b72d6c36",
-    strip_prefix = "protobuf-3.19.3",
-    url = "https://github.com/protocolbuffers/protobuf/archive/refs/tags/v3.19.3.tar.gz",
+    sha256 = "3bd7828aa5af4b13b99c191e8b1e884ebfa9ad371b0ce264605d347f135d2568",
+    strip_prefix = "protobuf-3.19.4",
+    url = "https://github.com/protocolbuffers/protobuf/archive/refs/tags/v3.19.4.tar.gz",
 )
 
 http_archive(
     name = "com_github_bazelbuild_buildtools",
-    sha256 = "d368c47bbfc055010f118efb2962987475418737e901f7782d2a966d1dc80296",
-    strip_prefix = "buildtools-4.2.5",
-    url = "https://github.com/bazelbuild/buildtools/archive/refs/tags/4.2.5.tar.gz",
+    sha256 = "7f43df3cca7bb4ea443b4159edd7a204c8d771890a69a50a190dc9543760ca21",
+    strip_prefix = "buildtools-5.0.1",
+    url = "https://github.com/bazelbuild/buildtools/archive/refs/tags/5.0.1.tar.gz",
 )
 
 http_archive(
@@ -185,22 +185,22 @@ maven_install(
     artifacts = [
         "com.google.auto.value:auto-value-annotations:1.9",
         "com.google.auto.value:auto-value:1.9",
-        "com.google.errorprone:error_prone_annotations:2.10.0",
+        "com.google.errorprone:error_prone_annotations:2.11.0",
         "com.google.flogger:flogger-system-backend:0.7.4",
         "com.google.flogger:flogger:0.7.4",
         "com.google.guava:guava:31.0.1-jre",
         "com.uber.nullaway:nullaway:0.9.5",
         "commons-validator:commons-validator:1.7",
-        "org.checkerframework:checker-qual:3.21.1",
-        "org.immutables:value-annotations:2.9.0-rc1",
-        "org.immutables:value-processor:2.9.0-rc1",
+        "org.checkerframework:checker-qual:3.21.2",
+        "org.immutables:value-annotations:2.9.0",
+        "org.immutables:value-processor:2.9.0",
         "org.inferred:freebuilder:2.7.0",
         "org.projectlombok:lombok:1.18.22",
     ] + testonly_artifacts([
         "com.google.truth.extensions:truth-java8-extension:1.1.3",
         "com.google.truth:truth:1.1.3",
         "junit:junit:4.13.2",
-        "nl.jqno.equalsverifier:equalsverifier:3.8.2",
+        "nl.jqno.equalsverifier:equalsverifier:3.9",
     ]),
     fetch_sources = True,
     maven_install_json = "//:maven_install.json",
