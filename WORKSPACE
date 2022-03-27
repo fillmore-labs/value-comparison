@@ -36,6 +36,15 @@ http_archive(
 )
 
 http_archive(
+    name = "rules_pkg",
+    sha256 = "62eeb544ff1ef41d786e329e1536c1d541bb9bcad27ae984d57f18f314018e66",
+    urls = [
+        "https://github.com/bazelbuild/rules_pkg/releases/download/0.6.0/rules_pkg-0.6.0.tar.gz",
+        "https://mirror.bazel.build/github.com/bazelbuild/rules_pkg/releases/download/0.6.0/rules_pkg-0.6.0.tar.gz",
+    ],
+)
+
+http_archive(
     name = "rules_proto",
     sha256 = "66bfdf8782796239d3875d37e7de19b1d94301e8972b3cbd2446b332429b4df1",
     strip_prefix = "rules_proto-4.0.0",
@@ -44,9 +53,9 @@ http_archive(
 
 http_archive(
     name = "com_google_protobuf",
-    sha256 = "3bd7828aa5af4b13b99c191e8b1e884ebfa9ad371b0ce264605d347f135d2568",
-    strip_prefix = "protobuf-3.19.4",
-    url = "https://github.com/protocolbuffers/protobuf/archive/refs/tags/v3.19.4.tar.gz",
+    sha256 = "b07772d38ab07e55eca4d50f4b53da2d998bb221575c60a4f81100242d4b4889",
+    strip_prefix = "protobuf-3.20.0",
+    url = "https://github.com/protocolbuffers/protobuf/archive/refs/tags/v3.20.0.tar.gz",
 )
 
 http_archive(
@@ -93,7 +102,7 @@ bazel_skylib_workspace()
 
 load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_dependencies")
 
-go_register_toolchains(go_version = "1.17.7")
+go_register_toolchains(go_version = "1.18")
 
 go_rules_dependencies()
 
@@ -102,6 +111,12 @@ go_rules_dependencies()
 load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies")
 
 gazelle_dependencies()
+
+# ---
+
+load("@rules_pkg//:deps.bzl", "rules_pkg_dependencies")
+
+rules_pkg_dependencies()
 
 # ---
 
@@ -189,7 +204,7 @@ maven_install(
         "com.google.flogger:flogger-system-backend:0.7.4",
         "com.google.flogger:flogger:0.7.4",
         "com.google.guava:guava:31.1-jre",
-        "com.uber.nullaway:nullaway:0.9.5",
+        "com.uber.nullaway:nullaway:0.9.6",
         "commons-validator:commons-validator:1.7",
         "org.checkerframework:checker-qual:3.21.3",
         "org.immutables:value-annotations:2.9.0",
@@ -200,11 +215,13 @@ maven_install(
         "com.google.truth.extensions:truth-java8-extension:1.1.3",
         "com.google.truth:truth:1.1.3",
         "junit:junit:4.13.2",
-        "nl.jqno.equalsverifier:equalsverifier:3.9",
+        "nl.jqno.equalsverifier:equalsverifier:3.10",
     ]),
     fetch_sources = True,
     maven_install_json = "//:maven_install.json",
     override_targets = {
+        "com.google.protobuf:protobuf-java": "@com_google_protobuf//:protobuf_java",
+        "com.google.protobuf:protobuf-java-util": "@com_google_protobuf//:protobuf_java_util",
         "org.scala-lang:scala-compiler": "@io_bazel_rules_scala_scala_compiler",
         "org.scala-lang:scala-library": "@io_bazel_rules_scala_scala_library",
         "org.scala-lang:scala-reflect": "@io_bazel_rules_scala_scala_reflect",
