@@ -16,6 +16,7 @@ public final class Main {
     logger.atInfo().log("Autovalue: %s", AutovalueHelper.person());
     logger.atInfo().log("FreeBuilder: %s", FreeBuilderHelper.person());
     logger.atInfo().log("Immutables: %s", ImmutablesHelper.person());
+    logger.atInfo().log("Kotlin: %s", KotlinHelper.person());
     logger.atInfo().log("Lombok: %s", LombokHelper.person());
     logger.atInfo().log("Pojo: %s", PojoHelper.person());
     logger.atInfo().log("Record: %s", RecordHelper.person());

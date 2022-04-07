@@ -81,9 +81,9 @@ http_archive(
 
 http_archive(
     name = "io_bazel_rules_scala",
-    sha256 = "5a2f79996da73d5b5777a67cc6677b6574256bbc0ef201feb04318af73984b23",
-    strip_prefix = "rules_scala-a148a3a00d03ac0e16ef130176b8ed633109408e",
-    url = "https://github.com/bazelbuild/rules_scala/archive/a148a3a00d03ac0e16ef130176b8ed633109408e.tar.gz",
+    sha256 = "fb57172f5f5a9e6c977e861429e86ec0db21e0c240fab53dd3adc26bab500da3",
+    strip_prefix = "rules_scala-0b2bd395c790b9c9ca1663b0a740c35a259de36c",
+    url = "https://github.com/bazelbuild/rules_scala/archive/0b2bd395c790b9c9ca1663b0a740c35a259de36c.tar.gz",
 )
 
 http_archive(
@@ -200,13 +200,13 @@ maven_install(
     artifacts = [
         "com.google.auto.value:auto-value-annotations:1.9",
         "com.google.auto.value:auto-value:1.9",
-        "com.google.errorprone:error_prone_annotations:2.11.0",
+        "com.google.errorprone:error_prone_annotations:2.12.1",
         "com.google.flogger:flogger-system-backend:0.7.4",
         "com.google.flogger:flogger:0.7.4",
         "com.google.guava:guava:31.1-jre",
         "com.uber.nullaway:nullaway:0.9.6",
         "commons-validator:commons-validator:1.7",
-        "org.checkerframework:checker-qual:3.21.3",
+        "org.checkerframework:checker-qual:3.21.4",
         "org.immutables:value-annotations:2.9.0",
         "org.immutables:value-processor:2.9.0",
         "org.inferred:freebuilder:2.7.0",
