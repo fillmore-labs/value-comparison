@@ -8,6 +8,7 @@ import lombok.experimental.SuperBuilder;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 @SuppressWarnings({
+  "AnnotationPosition",
   "MissingBraces",
   "MissingOverride",
   "MissingSummary",

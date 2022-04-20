@@ -7,6 +7,7 @@ import lombok.Value;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 @SuppressWarnings({
+  "AnnotationPosition",
   "MissingBraces",
   "MissingSummary",
   "MultiVariableDeclaration",

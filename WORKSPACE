@@ -18,6 +18,51 @@ http_archive(
 )
 
 http_archive(
+    name = "rules_java",
+    sha256 = "8c376f1e4ab7d7d8b1880e4ef8fc170862be91b7c683af97ca2768df546bb073",
+    urls = [
+        "https://github.com/bazelbuild/rules_java/releases/download/5.0.0/rules_java-5.0.0.tar.gz",
+        "https://mirror.bazel.build/github.com/bazelbuild/rules_java/releases/download/5.0.0/rules_java-5.0.0.tar.gz",
+    ],
+)
+
+http_archive(
+    name = "remote_java_tools",
+    sha256 = "2eede49b2d80135e0ea22180f63df26db2ed4b795c1c041b25cc653d6019fbec",
+    urls = [
+        "https://github.com/bazelbuild/java_tools/releases/download/java_v11.7.1/java_tools-v11.7.1.zip",
+        "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.7.1/java_tools-v11.7.1.zip",
+    ],
+)
+
+http_archive(
+    name = "remote_java_tools_linux",
+    sha256 = "f78077f0c043d0d13c82de0ee4a99753e66bb18ec46e3601fa2a10e7f26798a8",
+    urls = [
+        "https://github.com/bazelbuild/java_tools/releases/download/java_v11.7.1/java_tools_linux-v11.7.1.zip",
+        "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.7.1/java_tools_linux-v11.7.1.zip",
+    ],
+)
+
+http_archive(
+    name = "remote_java_tools_windows",
+    sha256 = "a7086734866505292ee4c206328c73c6af127e69bd51b98c9c186ae4b9b6d2db",
+    urls = [
+        "https://github.com/bazelbuild/java_tools/releases/download/java_v11.7.1/java_tools_windows-v11.7.1.zip",
+        "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.7.1/java_tools_windows-v11.7.1.zip",
+    ],
+)
+
+http_archive(
+    name = "remote_java_tools_darwin",
+    sha256 = "4d6d388b54ad3b9aa35b30dd67af8d71c4c240df8cfb5000bbec67bdd5c53a73",
+    urls = [
+        "https://github.com/bazelbuild/java_tools/releases/download/java_v11.7.1/java_tools_darwin-v11.7.1.zip",
+        "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.7.1/java_tools_darwin-v11.7.1.zip",
+    ],
+)
+
+http_archive(
     name = "io_bazel_rules_go",
     sha256 = "f2dcd210c7095febe54b804bb1cd3a58fe8435a909db2ec04e31542631cf715c",
     urls = [
@@ -60,9 +105,9 @@ http_archive(
 
 http_archive(
     name = "com_github_bazelbuild_buildtools",
-    sha256 = "7f43df3cca7bb4ea443b4159edd7a204c8d771890a69a50a190dc9543760ca21",
-    strip_prefix = "buildtools-5.0.1",
-    url = "https://github.com/bazelbuild/buildtools/archive/refs/tags/5.0.1.tar.gz",
+    sha256 = "e3bb0dc8b0274ea1aca75f1f8c0c835adbe589708ea89bf698069d0790701ea3",
+    strip_prefix = "buildtools-5.1.0",
+    url = "https://github.com/bazelbuild/buildtools/archive/refs/tags/5.1.0.tar.gz",
 )
 
 http_archive(
@@ -100,9 +145,17 @@ bazel_skylib_workspace()
 
 # ---
 
+load("@rules_java//java:repositories.bzl", "rules_java_dependencies", "rules_java_toolchains")
+
+rules_java_dependencies()
+
+rules_java_toolchains()
+
+# ---
+
 load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_dependencies")
 
-go_register_toolchains(go_version = "1.18")
+go_register_toolchains(go_version = "1.18.1")
 
 go_rules_dependencies()
 
@@ -200,7 +253,7 @@ maven_install(
     artifacts = [
         "com.google.auto.value:auto-value-annotations:1.9",
         "com.google.auto.value:auto-value:1.9",
-        "com.google.errorprone:error_prone_annotations:2.12.1",
+        "com.google.errorprone:error_prone_annotations:2.13.1",
         "com.google.flogger:flogger-system-backend:0.7.4",
         "com.google.flogger:flogger:0.7.4",
         "com.google.guava:guava:31.1-jre",
@@ -210,7 +263,7 @@ maven_install(
         "org.immutables:value-annotations:2.9.0",
         "org.immutables:value-processor:2.9.0",
         "org.inferred:freebuilder:2.7.0",
-        "org.projectlombok:lombok:1.18.22",
+        "org.projectlombok:lombok:1.18.24",
     ] + testonly_artifacts([
         "com.google.truth.extensions:truth-java8-extension:1.1.3",
         "com.google.truth:truth:1.1.3",

@@ -28,8 +28,9 @@ This source demonstrates how to create value objects in Java using various annot
 - https://immutables.github.io[Immutables]
 - https://projectlombok.org[Project Lombok]
 
-Also, simple https://docs.oracle.com/en/java/javase/17/language/records.html[record classes] and
-https://docs.scala-lang.org/tour/case-classes.html[Scala case class] examples are included for
+Also, simple https://docs.oracle.com/en/java/javase/17/language/records.html[record classes],
+https://docs.scala-lang.org/tour/case-classes.html[Scala case class] amd
+https://kotlinlang.org/docs/data-classes.html[Kotlin data class] examples are included for
 demonstration purposes.
 
 == Structure

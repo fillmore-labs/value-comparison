@@ -11,6 +11,7 @@ import org.checkerframework.checker.nullness.qual.Nullable;
 
 /** Representation of a person. */
 @SuppressWarnings({
+  "AnnotationPosition",
   "FieldMissingNullable",
   "MissingBraces",
   "MultiVariableDeclaration",

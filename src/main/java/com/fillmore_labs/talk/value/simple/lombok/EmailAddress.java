@@ -8,6 +8,7 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 
 /** A (validated) e-mail address. */
 @SuppressWarnings({
+  "AnnotationPosition",
   "MissingBraces",
   "MultiVariableDeclaration",
   "SameNameButDifferent",
