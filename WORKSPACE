@@ -132,9 +132,10 @@ http_archive(
 )
 
 http_archive(
-    name = "io_bazel_rules_kotlin",
-    sha256 = "12d22a3d9cbcf00f2e2d8f0683ba87d3823cb8c7f6837568dd7e48846e023307",
-    url = "https://github.com/bazelbuild/rules_kotlin/releases/download/v1.5.0/rules_kotlin_release.tgz",
+    name = "io_bazel_rules_kotlin_head",
+    sha256 = "181effbe78421fe11611321ea695999b11ade1178474ff6c50ca9823cb80c7a3",
+    strip_prefix = "rules_kotlin-d1be914c450e9074db71acb1fa65ea05eb2d2adb",
+    url = "https://github.com/bazelbuild/rules_kotlin/archive/d1be914c450e9074db71acb1fa65ea05eb2d2adb.tar.gz",
 )
 
 # ---
@@ -230,13 +231,26 @@ scala_register_unused_deps_toolchains()
 
 # ---
 
-load("@io_bazel_rules_kotlin//kotlin:repositories.bzl", "kotlin_repositories")
+load("@io_bazel_rules_kotlin_head//src/main/starlark/release_archive:repository.bzl", "archive_repository")
+
+archive_repository(
+    name = "io_bazel_rules_kotlin",
+    source_repository_name = "io_bazel_rules_kotlin_head",
+)
+
+load("@io_bazel_rules_kotlin//kotlin:repositories.bzl", "kotlin_repositories", "kotlinc_version")
+
+kotlin_repositories(
+    compiler_release = kotlinc_version(
+        release = "1.6.21",
+        # curl -L https://github.com/JetBrains/kotlin/releases/download/v1.6.21/kotlin-compiler-1.6.21.zip | sha256sum
+        sha256 = "632166fed89f3f430482f5aa07f2e20b923b72ef688c8f5a7df3aa1502c6d8ba",
+    ),
+)
 
 kotlin_repositories()
 
-load("@io_bazel_rules_kotlin//kotlin:core.bzl", "kt_register_toolchains")
-
-kt_register_toolchains()
+register_toolchains("//toolchain:kotlin_toolchain")
 
 # ---
 

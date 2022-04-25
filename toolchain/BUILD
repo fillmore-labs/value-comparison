@@ -1,4 +1,5 @@
 load("@bazel_tools//tools/jdk:default_java_toolchain.bzl", "default_java_toolchain")
+load("@io_bazel_rules_kotlin//kotlin:core.bzl", "define_kt_toolchain")
 load("@io_bazel_rules_scala//scala:scala_toolchain.bzl", "scala_toolchain")
 load("@rules_java//java:defs.bzl", "java_library", "java_package_configuration", "java_plugin")
 
@@ -77,6 +78,13 @@ toolchain(
     toolchain = "toolchain_scala213",
     toolchain_type = "@io_bazel_rules_scala//scala:toolchain_type",
     visibility = ["//visibility:public"],
+)
+
+define_kt_toolchain(
+    name = "kotlin_toolchain",
+    api_version = "1.6",
+    jvm_target = "17",
+    language_version = "1.6",
 )
 
 # ---

@@ -12,6 +12,3 @@ coverage:ci --test_summary=terse
 coverage:ci --combined_report=lcov
 
 try-import %workspace%/user.bazelrc
-
-# https://github.com/bazelbuild/rules_kotlin/issues/562
-build --worker_extra_flag='KotlinCompile=--wrapper_script_flag=--jvm_flags=--add-opens=jdk.jdeps/com.sun.tools.jdeps=ALL-UNNAMED'
