@@ -133,9 +133,9 @@ http_archive(
 
 http_archive(
     name = "io_bazel_rules_kotlin_head",
-    sha256 = "20ef1fbee4271d404cf835790a4671d59b1ba09f5b827103b79bc0a82ec09198",
-    strip_prefix = "rules_kotlin-17b813a16eb5e51297b7d24521e583e4de503331",
-    url = "https://github.com/bazelbuild/rules_kotlin/archive/17b813a16eb5e51297b7d24521e583e4de503331.tar.gz",
+    sha256 = "bf6e2a50a37c111c13871258f1e1e0e09cb4e0a84aa9adbbc12ee5ffa8e8c5e6",
+    strip_prefix = "rules_kotlin-7e419d2a007e0731d69bdec966636f156218a85e",
+    url = "https://github.com/bazelbuild/rules_kotlin/archive/7e419d2a007e0731d69bdec966636f156218a85e.tar.gz",
 )
 
 # ---
