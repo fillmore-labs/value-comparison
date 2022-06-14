@@ -98,9 +98,9 @@ http_archive(
 
 http_archive(
     name = "com_google_protobuf",
-    sha256 = "b07772d38ab07e55eca4d50f4b53da2d998bb221575c60a4f81100242d4b4889",
-    strip_prefix = "protobuf-3.20.0",
-    url = "https://github.com/protocolbuffers/protobuf/archive/refs/tags/v3.20.0.tar.gz",
+    sha256 = "f1a83673cbcaff6346a8fba87a9c02c0f943a4a696b6c7d1b71586d97609db12",
+    strip_prefix = "protobuf-21.1",
+    url = "https://github.com/protocolbuffers/protobuf/archive/refs/tags/v21.1.tar.gz",
 )
 
 http_archive(
@@ -132,11 +132,18 @@ http_archive(
 )
 
 http_archive(
-    name = "io_bazel_rules_kotlin_head",
-    sha256 = "39ad66c368d1da95624cac2420dcf3ae02f048dc3d6a714cfcd08f08a28b1194",
-    strip_prefix = "rules_kotlin-6e3339770551881f63d657c1f7b8bbdcd3d23c2c",
-    url = "https://github.com/bazelbuild/rules_kotlin/archive/6e3339770551881f63d657c1f7b8bbdcd3d23c2c.tar.gz",
+    name = "io_bazel_rules_kotlin",
+    sha256 = "",
+    url = "https://github.com/bazelbuild/rules_kotlin/releases/download/v1.6.0-RC-3/rules_kotlin_release.tgz",
 )
+
+load("@io_bazel_rules_kotlin//kotlin:repositories.bzl", "kotlin_repositories")
+
+kotlin_repositories()  # if you want the default. Otherwise see custom kotlinc distribution below
+
+load("@io_bazel_rules_kotlin//kotlin:core.bzl", "kt_register_toolchains")
+
+kt_register_toolchains()  # to use the default toolchain, otherwise see toolchains below
 
 # ---
 
@@ -156,7 +163,7 @@ rules_java_toolchains()
 
 load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_dependencies")
 
-go_register_toolchains(go_version = "1.18.1")
+go_register_toolchains(go_version = "1.18.3")
 
 go_rules_dependencies()
 
@@ -231,23 +238,6 @@ scala_register_unused_deps_toolchains()
 
 # ---
 
-load("@io_bazel_rules_kotlin_head//src/main/starlark/release_archive:repository.bzl", "archive_repository")
-
-archive_repository(
-    name = "io_bazel_rules_kotlin",
-    source_repository_name = "io_bazel_rules_kotlin_head",
-)
-
-load("@io_bazel_rules_kotlin//kotlin:repositories.bzl", "kotlin_repositories", "kotlinc_version")
-
-kotlin_repositories(
-    compiler_release = kotlinc_version(
-        release = "1.6.21",
-        # curl -L https://github.com/JetBrains/kotlin/releases/download/v1.6.21/kotlin-compiler-1.6.21.zip | sha256sum
-        sha256 = "632166fed89f3f430482f5aa07f2e20b923b72ef688c8f5a7df3aa1502c6d8ba",
-    ),
-)
-
 kotlin_repositories()
 
 register_toolchains("//toolchain:kotlin_toolchain")
@@ -267,13 +257,13 @@ maven_install(
     artifacts = [
         "com.google.auto.value:auto-value-annotations:1.9",
         "com.google.auto.value:auto-value:1.9",
-        "com.google.errorprone:error_prone_annotations:2.13.1",
+        "com.google.errorprone:error_prone_annotations:2.14.0",
         "com.google.flogger:flogger-system-backend:0.7.4",
         "com.google.flogger:flogger:0.7.4",
         "com.google.guava:guava:31.1-jre",
-        "com.uber.nullaway:nullaway:0.9.6",
+        "com.uber.nullaway:nullaway:0.9.7",
         "commons-validator:commons-validator:1.7",
-        "org.checkerframework:checker-qual:3.21.4",
+        "org.checkerframework:checker-qual:3.22.1",
         "org.immutables:value-annotations:2.9.0",
         "org.immutables:value-processor:2.9.0",
         "org.inferred:freebuilder:2.7.0",
