@@ -11,8 +11,6 @@ import org.checkerframework.checker.nullness.qual.Nullable;
 @Immutable
 @AutoValue
 public abstract class Person {
-  private static final EmailAddress[] NO_EMAIL = {};
-
   /* package */ Person() {}
 
   /**
@@ -21,8 +19,7 @@ public abstract class Person {
    * @return A new builder
    */
   public static Builder builder() {
-    // Provide a default for email, making it optional
-    return new AutoValue_Person.Builder().email(NO_EMAIL);
+    return new AutoValue_Person.Builder();
   }
 
   /**
