@@ -8,8 +8,7 @@ import scala.collection.immutable
 import scala.jdk.CollectionConverters._
 import scala.jdk.OptionConverters._
 
-object Person {
-
+private object Person {
   /** Java API: Construct a person
     *
     * @param givenName The given name. Required.
@@ -25,12 +24,11 @@ object Person {
     )
 }
 
-final case class Person private (
+final case class Person private(
     givenName: String,
     surname: Option[String] = None,
     email: immutable.Set[EmailAddress] = Set.empty
 ) {
-
   /** Java API: The given name of this person. Everyone has one.
     *
     * @return A name.

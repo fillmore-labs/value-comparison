@@ -26,7 +26,9 @@ public abstract class MovieTicket {
   @Immutable
   @AutoValue
   public abstract static class AvailableMovieTicket extends MovieTicket {
-    /* package */ AvailableMovieTicket() {}
+    /* package */ AvailableMovieTicket() {
+      super();
+    }
 
     public static Builder builder() {
       return new AutoValue_MovieTicket_AvailableMovieTicket.Builder();

@@ -19,46 +19,43 @@ http_archive(
 
 http_archive(
     name = "rules_java",
-    sha256 = "8c376f1e4ab7d7d8b1880e4ef8fc170862be91b7c683af97ca2768df546bb073",
-    urls = [
-        "https://github.com/bazelbuild/rules_java/releases/download/5.0.0/rules_java-5.0.0.1.tar.gz",
-        "https://mirror.bazel.build/github.com/bazelbuild/rules_java/releases/download/5.0.0/rules_java-5.0.0.tar.gz",
-    ],
+    sha256 = "c73336802d0b4882e40770666ad055212df4ea62cfa6edf9cb0f9d29828a0934",
+    url = "https://github.com/bazelbuild/rules_java/releases/download/5.3.5/rules_java-5.3.5.tar.gz",
 )
 
 http_archive(
     name = "remote_java_tools",
-    sha256 = "2eede49b2d80135e0ea22180f63df26db2ed4b795c1c041b25cc653d6019fbec",
+    sha256 = "5cd59ea6bf938a1efc1e11ea562d37b39c82f76781211b7cd941a2346ea8484d",
     urls = [
-        "https://github.com/bazelbuild/java_tools/releases/download/java_v11.7.1/java_tools-v11.7.1.zip",
-        "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.7.1/java_tools-v11.7.1.zip",
+        "https://github.com/bazelbuild/java_tools/releases/download/java_v11.9/java_tools-v11.9.zip",
+        "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.9/java_tools-v11.9.zip",
     ],
 )
 
 http_archive(
     name = "remote_java_tools_linux",
-    sha256 = "f78077f0c043d0d13c82de0ee4a99753e66bb18ec46e3601fa2a10e7f26798a8",
+    sha256 = "512582cac5b7ea7974a77b0da4581b21f546c9478f206eedf54687eeac035989",
     urls = [
-        "https://github.com/bazelbuild/java_tools/releases/download/java_v11.7.1/java_tools_linux-v11.7.1.zip",
-        "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.7.1/java_tools_linux-v11.7.1.zip",
+        "https://github.com/bazelbuild/java_tools/releases/download/java_v11.9/java_tools_linux-v11.9.zip",
+        "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.9/java_tools_linux-v11.9.zip",
     ],
 )
 
 http_archive(
     name = "remote_java_tools_windows",
-    sha256 = "a7086734866505292ee4c206328c73c6af127e69bd51b98c9c186ae4b9b6d2db",
+    sha256 = "677ab910046205020fd715489147c2bcfad8a35d9f5d94fdc998d217545bd87a",
     urls = [
-        "https://github.com/bazelbuild/java_tools/releases/download/java_v11.7.1/java_tools_windows-v11.7.1.zip",
-        "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.7.1/java_tools_windows-v11.7.1.zip",
+        "https://github.com/bazelbuild/java_tools/releases/download/java_v11.9/java_tools_windows-v11.9.zip",
+        "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.9/java_tools_windows-v11.9.zip",
     ],
 )
 
 http_archive(
     name = "remote_java_tools_darwin",
-    sha256 = "4d6d388b54ad3b9aa35b30dd67af8d71c4c240df8cfb5000bbec67bdd5c53a73",
+    sha256 = "b9e962c6a836ba1d7573f2473fab3a897c6370d4c2724bde4017b40932ff4fe4",
     urls = [
-        "https://github.com/bazelbuild/java_tools/releases/download/java_v11.7.1/java_tools_darwin-v11.7.1.zip",
-        "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.7.1/java_tools_darwin-v11.7.1.zip",
+        "https://github.com/bazelbuild/java_tools/releases/download/java_v11.9/java_tools_darwin-v11.9.zip",
+        "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.9/java_tools_darwin-v11.9.zip",
     ],
 )
 
@@ -91,16 +88,16 @@ http_archive(
 
 http_archive(
     name = "rules_proto",
-    sha256 = "66bfdf8782796239d3875d37e7de19b1d94301e8972b3cbd2446b332429b4df1",
-    strip_prefix = "rules_proto-4.0.0",
-    url = "https://github.com/bazelbuild/rules_proto/archive/refs/tags/4.0.0.tar.gz",
+    sha256 = "80d3a4ec17354cccc898bfe32118edd934f851b03029d63ef3fc7c8663a7415c",
+    strip_prefix = "rules_proto-5.3.0-21.5",
+    url = "https://github.com/bazelbuild/rules_proto/archive/refs/tags/5.3.0-21.5.tar.gz",
 )
 
 http_archive(
     name = "com_google_protobuf",
-    sha256 = "f1a83673cbcaff6346a8fba87a9c02c0f943a4a696b6c7d1b71586d97609db12",
-    strip_prefix = "protobuf-21.1",
-    url = "https://github.com/protocolbuffers/protobuf/archive/refs/tags/v21.1.tar.gz",
+    sha256 = "4a7e87e4166c358c63342dddcde6312faee06ea9d5bb4e2fa87d3478076f6639",
+    strip_prefix = "protobuf-21.5",
+    url = "https://github.com/protocolbuffers/protobuf/archive/refs/tags/v21.5.tar.gz",
 )
 
 http_archive(
@@ -112,9 +109,9 @@ http_archive(
 
 http_archive(
     name = "rules_jvm_external",
-    sha256 = "2cd77de091e5376afaf9cc391c15f093ebd0105192373b334f0a855d89092ad5",
-    strip_prefix = "rules_jvm_external-4.2",
-    url = "https://github.com/bazelbuild/rules_jvm_external/archive/4.2.tar.gz",
+    sha256 = "6e9f2b94ecb6aa7e7ec4a0fbf882b226ff5257581163e88bf70ae521555ad271",
+    strip_prefix = "rules_jvm_external-4.5",
+    url = "https://github.com/bazelbuild/rules_jvm_external/archive/4.5.tar.gz",
 )
 
 http_archive(
@@ -133,17 +130,9 @@ http_archive(
 
 http_archive(
     name = "io_bazel_rules_kotlin",
-    sha256 = "",
-    url = "https://github.com/bazelbuild/rules_kotlin/releases/download/v1.6.0-RC-3/rules_kotlin_release.tgz",
+    sha256 = "f033fa36f51073eae224f18428d9493966e67c27387728b6be2ebbdae43f140e",
+    url = "https://github.com/bazelbuild/rules_kotlin/releases/download/v1.7.0-RC-3/rules_kotlin_release.tgz",
 )
-
-load("@io_bazel_rules_kotlin//kotlin:repositories.bzl", "kotlin_repositories")
-
-kotlin_repositories()  # if you want the default. Otherwise see custom kotlinc distribution below
-
-load("@io_bazel_rules_kotlin//kotlin:core.bzl", "kt_register_toolchains")
-
-kt_register_toolchains()  # to use the default toolchain, otherwise see toolchains below
 
 # ---
 
@@ -163,7 +152,7 @@ rules_java_toolchains()
 
 load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_dependencies")
 
-go_register_toolchains(go_version = "1.18.3")
+go_register_toolchains(go_version = "1.19.3")
 
 go_rules_dependencies()
 
@@ -201,7 +190,7 @@ rules_jvm_external_setup()
 
 load("@io_bazel_rules_scala//:scala_config.bzl", "scala_config")
 
-scala_config(scala_version = "2.13.8")
+scala_config(scala_version = "2.13.10")
 
 load("@io_bazel_rules_scala//scala:scala.bzl", "scala_repositories")
 
@@ -209,23 +198,23 @@ scala_repositories(
     fetch_sources = True,
     overriden_artifacts = {
         "io_bazel_rules_scala_scala_compiler": {
-            "artifact": "org.scala-lang:scala-compiler:2.13.8",
+            "artifact": "org.scala-lang:scala-compiler:2.13.10",
             "deps": [
                 "@io_bazel_rules_scala_scala_library",
                 "@io_bazel_rules_scala_scala_reflect",
             ],
-            "sha256": "b248cb6f390ee8bceb912af3da471146fdf003702a173d750f986b1d4a3362e6",
+            "sha256": "2cd4a964ea48e78c91a2a7b19c4fc67a9868728ace5ee966b1d498270b3c3aa7",
         },
         "io_bazel_rules_scala_scala_library": {
-            "artifact": "org.scala-lang:scala-library:2.13.8",
-            "sha256": "a0882b82514190c2bac7d1a459872a75f005fc0f3e88b2bc0390367146e35db7",
+            "artifact": "org.scala-lang:scala-library:2.13.10",
+            "sha256": "e6ca607c3fce03e8fa38af3374ce1f8bb098e316e8bf6f6d27331360feddb1c1",
         },
         "io_bazel_rules_scala_scala_reflect": {
-            "artifact": "org.scala-lang:scala-reflect:2.13.8",
+            "artifact": "org.scala-lang:scala-reflect:2.13.10",
             "deps": [
                 "@io_bazel_rules_scala_scala_library",
             ],
-            "sha256": "fdfbcc92e87f424578b303bcb47e0f55fee990c4b6da0006c9e75879d1e442e4",
+            "sha256": "62bd7a7198193c5373a992c122990279e413af3307162472a5d3cbb8ecadb35e",
         },
     },
 )
@@ -237,6 +226,8 @@ scala_register_toolchains()
 scala_register_unused_deps_toolchains()
 
 # ---
+
+load("@io_bazel_rules_kotlin//kotlin:repositories.bzl", "kotlin_repositories")
 
 kotlin_repositories()
 
@@ -255,24 +246,24 @@ load("//toolchain:defs.bzl", "testonly_artifacts")
 
 maven_install(
     artifacts = [
-        "com.google.auto.value:auto-value-annotations:1.9",
-        "com.google.auto.value:auto-value:1.9",
-        "com.google.errorprone:error_prone_annotations:2.14.0",
+        "com.google.auto.value:auto-value-annotations:1.10.1",
+        "com.google.auto.value:auto-value:1.10.1",
+        "com.google.errorprone:error_prone_annotations:2.16",
         "com.google.flogger:flogger-system-backend:0.7.4",
         "com.google.flogger:flogger:0.7.4",
         "com.google.guava:guava:31.1-jre",
-        "com.uber.nullaway:nullaway:0.9.7",
+        "com.uber.nullaway:nullaway:0.10.5",
         "commons-validator:commons-validator:1.7",
-        "org.checkerframework:checker-qual:3.22.1",
-        "org.immutables:value-annotations:2.9.0",
-        "org.immutables:value-processor:2.9.0",
-        "org.inferred:freebuilder:2.7.0",
+        "org.checkerframework:checker-qual:3.28.0",
+        "org.immutables:value-annotations:2.9.2",
+        "org.immutables:value-processor:2.9.2",
+        "org.inferred:freebuilder:2.8.0",
         "org.projectlombok:lombok:1.18.24",
     ] + testonly_artifacts([
         "com.google.truth.extensions:truth-java8-extension:1.1.3",
         "com.google.truth:truth:1.1.3",
         "junit:junit:4.13.2",
-        "nl.jqno.equalsverifier:equalsverifier:3.10",
+        "nl.jqno.equalsverifier:equalsverifier:3.12.1",
     ]),
     fetch_sources = True,
     maven_install_json = "//:maven_install.json",

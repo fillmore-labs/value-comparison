@@ -5,7 +5,7 @@
 #
 
 def _java_header_compilation_transition(settings, attr):
-    _ignore = (settings, attr)
+    _ignore = (settings, attr)  # @unused
     return {"//command_line_option:java_header_compilation": "False"}
 
 java_header_compilation_transition = transition(

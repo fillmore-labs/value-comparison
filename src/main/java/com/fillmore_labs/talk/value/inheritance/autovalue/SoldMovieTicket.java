@@ -8,7 +8,9 @@ import com.google.errorprone.annotations.Immutable;
 @AutoValue
 public abstract class SoldMovieTicket extends MovieTicket {
 
-  /* package */ SoldMovieTicket() {}
+  /* package */ SoldMovieTicket() {
+    super();
+  }
 
   public static Builder builder() {
     return new AutoValue_SoldMovieTicket.Builder();
