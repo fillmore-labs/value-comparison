@@ -115,13 +115,6 @@ http_archive(
 )
 
 http_archive(
-    name = "google_bazel_common",
-    sha256 = "3a2a161687edd5c201acd36595d0c09c3db65f026d5e7d1b5fdf84aa7de1cd73",
-    strip_prefix = "bazel-common-b89cd874d40250d9bab356d40f6ffac8f7aa98f1",
-    url = "https://github.com/google/bazel-common/archive/b89cd874d40250d9bab356d40f6ffac8f7aa98f1.tar.gz",
-)
-
-http_archive(
     name = "io_bazel_rules_scala",
     sha256 = "d6f3f02eaacc3e4c1ac8edfc10d510efb97e3341ba0377a002c60f195dd9105e",
     strip_prefix = "rules_scala-dee33f45a24bb62f8f0e7cf58665fa40c6159247",
@@ -139,14 +132,6 @@ http_archive(
 load("@bazel_skylib//:workspace.bzl", "bazel_skylib_workspace")
 
 bazel_skylib_workspace()
-
-# ---
-
-load("@rules_java//java:repositories.bzl", "rules_java_dependencies", "rules_java_toolchains")
-
-rules_java_dependencies()
-
-rules_java_toolchains()
 
 # ---
 
@@ -170,11 +155,11 @@ rules_pkg_dependencies()
 
 # ---
 
-load("@rules_proto//proto:repositories.bzl", "rules_proto_dependencies", "rules_proto_toolchains")
+load("@rules_java//java:repositories.bzl", "rules_java_dependencies", "rules_java_toolchains")
 
-rules_proto_dependencies()
+rules_java_dependencies()
 
-rules_proto_toolchains()
+rules_java_toolchains()
 
 # ---
 
@@ -185,6 +170,14 @@ rules_jvm_external_deps()
 load("@rules_jvm_external//:setup.bzl", "rules_jvm_external_setup")
 
 rules_jvm_external_setup()
+
+# ---
+
+load("@rules_proto//proto:repositories.bzl", "rules_proto_dependencies", "rules_proto_toolchains")
+
+rules_proto_dependencies()
+
+rules_proto_toolchains()
 
 # ---
 
@@ -232,12 +225,6 @@ load("@io_bazel_rules_kotlin//kotlin:repositories.bzl", "kotlin_repositories")
 kotlin_repositories()
 
 register_toolchains("//toolchain:kotlin_toolchain")
-
-# ---
-
-load("@google_bazel_common//:workspace_defs.bzl", "google_common_workspace_rules")
-
-google_common_workspace_rules()
 
 # ---
 
