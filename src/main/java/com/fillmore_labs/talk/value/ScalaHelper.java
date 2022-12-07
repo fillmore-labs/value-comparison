@@ -6,6 +6,6 @@ public final class ScalaHelper {
   private ScalaHelper() {}
 
   public static Person person() {
-    return Person.of(Constants.GIVEN_NAME, Constants.SURNAME, Constants.EMAIL, Constants.EMAIL2);
+    return Person.of(Constants.GIVEN_NAME, Constants.SURNAME, Constants.emails());
   }
 }

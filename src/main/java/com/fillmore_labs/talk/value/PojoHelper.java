@@ -9,7 +9,7 @@ public final class PojoHelper {
     return Person.builder()
         .givenName(Constants.GIVEN_NAME)
         .surname(Constants.SURNAME)
-        .email(Constants.EMAIL, Constants.EMAIL2)
+        .email(Constants.emails())
         .build();
   }
 }

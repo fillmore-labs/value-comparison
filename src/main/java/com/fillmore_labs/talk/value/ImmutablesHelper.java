@@ -9,7 +9,7 @@ public final class ImmutablesHelper {
     return Person.builder()
         .givenName(Constants.GIVEN_NAME)
         .surname(Constants.SURNAME)
-        .addEmail(Constants.EMAIL, Constants.EMAIL2)
+        .addEmail(Constants.emails())
         .build();
   }
 }
