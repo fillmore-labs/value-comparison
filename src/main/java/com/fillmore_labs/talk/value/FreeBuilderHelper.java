@@ -7,9 +7,9 @@ public final class FreeBuilderHelper {
 
   public static Person person() {
     return Person.builder()
-        .givenName(Main.GIVEN_NAME)
-        .surname(Main.SURNAME)
-        .addEmail(Main.EMAIL, Main.EMAIL2)
+        .givenName(Constants.GIVEN_NAME)
+        .surname(Constants.SURNAME)
+        .addEmail(Constants.EMAIL, Constants.EMAIL2)
         .build();
   }
 }

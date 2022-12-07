@@ -7,9 +7,9 @@ public final class AutovalueHelper {
 
   public static Person person() {
     return Person.builder()
-        .givenName(Main.GIVEN_NAME)
-        .surname(Main.SURNAME)
-        .email(Main.EMAIL, Main.EMAIL2)
+        .givenName(Constants.GIVEN_NAME)
+        .surname(Constants.SURNAME)
+        .email(Constants.EMAIL, Constants.EMAIL2)
         .build();
   }
 }

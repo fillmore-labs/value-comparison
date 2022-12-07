@@ -6,6 +6,6 @@ public final class KotlinHelper {
   private KotlinHelper() {}
 
   public static Person person() {
-    return Person.of(Main.GIVEN_NAME, Main.SURNAME, Main.EMAIL, Main.EMAIL2);
+    return Person.of(Constants.GIVEN_NAME, Constants.SURNAME, Constants.EMAIL, Constants.EMAIL2);
   }
 }
