@@ -7,7 +7,6 @@ import com.google.errorprone.annotations.Immutable;
 @Immutable
 @AutoValue
 public abstract class SoldMovieTicket extends MovieTicket {
-
   /* package */ SoldMovieTicket() {
     super();
   }
@@ -20,7 +19,6 @@ public abstract class SoldMovieTicket extends MovieTicket {
 
   @AutoValue.Builder
   public abstract static class Builder extends MovieTicket.Builder<Builder> {
-
     public abstract Builder owner(Person owner);
 
     @Override

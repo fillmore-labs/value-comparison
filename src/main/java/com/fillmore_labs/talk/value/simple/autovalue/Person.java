@@ -46,7 +46,6 @@ public abstract class Person {
   /** Builder of a person instance. */
   @AutoValue.Builder
   public abstract static class Builder {
-
     /**
      * Set the given name. Required.
      *

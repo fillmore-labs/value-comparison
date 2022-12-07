@@ -23,6 +23,5 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 @Value
 public class MovieTicket {
   @NonNull String movieName;
-
   long serial;
 }

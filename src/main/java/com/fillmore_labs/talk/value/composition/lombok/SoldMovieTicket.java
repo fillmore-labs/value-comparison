@@ -20,6 +20,5 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 @Value
 public class SoldMovieTicket {
   @NonNull MovieTicket ticket;
-
   @NonNull Person owner;
 }

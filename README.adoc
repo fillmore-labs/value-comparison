@@ -23,7 +23,7 @@ This source demonstrates how to create value objects in Java using various annot
 
 == Evaluated Libraries
 
-- https://github.com/google/auto/blob/master/value/userguide/index.md[AutoValue]
+- https://github.com/google/auto/blob/main/value/userguide/index.md[AutoValue]
 - https://freebuilder.inferred.org[FreeBuilder]
 - https://immutables.github.io[Immutables]
 - https://projectlombok.org[Project Lombok]
