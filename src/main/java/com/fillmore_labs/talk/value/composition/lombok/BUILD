@@ -17,7 +17,5 @@ java_library(
         "//src/main/java/com/fillmore_labs/talk/value/simple/lombok",
         "//toolchain:lombok",
         "//toolchain:nullaway",
-        "@maven//:com_google_code_findbugs_jsr305",
-        "@maven//:com_google_guava_guava",
     ],
 )

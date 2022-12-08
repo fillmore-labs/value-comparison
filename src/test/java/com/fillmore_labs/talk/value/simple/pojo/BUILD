@@ -8,7 +8,6 @@ java_library(
         "//src/main/java/com/fillmore_labs/talk/value/simple/pojo",
         "//toolchain:nullaway",
         "//toolchain:truth",
-        "@maven//:com_google_guava_guava",
         "@maven//:nl_jqno_equalsverifier_equalsverifier",
     ],
 )

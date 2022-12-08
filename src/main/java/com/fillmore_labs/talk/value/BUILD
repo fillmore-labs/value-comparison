@@ -15,6 +15,5 @@ java_library(
         "//src/main/scala/com/fillmore_labs/talk/value/simple/scala",
         "//toolchain:nullaway",
         "@maven//:com_google_flogger_flogger",
-        "@maven//:com_google_guava_guava",
     ],
 )
