@@ -137,7 +137,7 @@ bazel_skylib_workspace()
 
 load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_dependencies")
 
-go_register_toolchains(go_version = "1.19.3")
+go_register_toolchains(go_version = "1.19.4")
 
 go_rules_dependencies()
 
@@ -250,7 +250,7 @@ maven_install(
         "com.google.truth.extensions:truth-java8-extension:1.1.3",
         "com.google.truth:truth:1.1.3",
         "junit:junit:4.13.2",
-        "nl.jqno.equalsverifier:equalsverifier:3.12.1",
+        "nl.jqno.equalsverifier:equalsverifier:3.12.2",
     ]),
     fetch_sources = True,
     maven_install_json = "//:maven_install.json",
