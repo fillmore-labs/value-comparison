@@ -235,7 +235,7 @@ maven_install(
     artifacts = [
         "com.google.auto.value:auto-value-annotations:1.10.1",
         "com.google.auto.value:auto-value:1.10.1",
-        "com.google.errorprone:error_prone_annotations:2.16",
+        "com.google.errorprone:error_prone_annotations:2.18.0",
         "com.google.flogger:flogger-system-backend:0.7.4",
         "com.google.flogger:flogger:0.7.4",
         "com.google.guava:guava:31.1-jre",
