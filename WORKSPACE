@@ -239,7 +239,7 @@ maven_install(
         "com.google.flogger:flogger-system-backend:0.7.4",
         "com.google.flogger:flogger:0.7.4",
         "com.google.guava:guava:31.1-jre",
-        "com.uber.nullaway:nullaway:0.10.5",
+        "com.uber.nullaway:nullaway:0.10.9",
         "commons-validator:commons-validator:1.7",
         "org.checkerframework:checker-qual:3.28.0",
         "org.immutables:value-annotations:2.9.3",
