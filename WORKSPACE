@@ -241,7 +241,7 @@ maven_install(
         "com.google.guava:guava:31.1-jre",
         "com.uber.nullaway:nullaway:0.10.9",
         "commons-validator:commons-validator:1.7",
-        "org.checkerframework:checker-qual:3.28.0",
+        "org.checkerframework:checker-qual:3.30.0",
         "org.immutables:value-annotations:2.9.3",
         "org.immutables:value-processor:2.9.3",
         "org.inferred:freebuilder:2.8.0",
