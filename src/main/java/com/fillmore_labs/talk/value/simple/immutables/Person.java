@@ -3,6 +3,7 @@ package com.fillmore_labs.talk.value.simple.immutables;
 import static org.immutables.value.Value.Style.ImplementationVisibility.PACKAGE;
 
 import com.google.common.collect.ImmutableSet;
+import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import com.google.errorprone.annotations.Immutable;
 import java.util.Arrays;
 import java.util.Optional;
@@ -55,7 +56,8 @@ public abstract class Person {
      * @param email Emails
      * @return This builder
      */
-    @SuppressWarnings("ParameterPackage")
+    @SuppressWarnings({"ParameterPackage", "BuilderReturnThis"})
+    @CanIgnoreReturnValue
     public Builder addEmail(String... email) {
       return addAllEmail(
           Arrays.stream(email).map(EmailAddress::of).collect(ImmutableSet.toImmutableSet()));
