@@ -195,7 +195,7 @@ maven_install(
         "org.immutables:value-annotations:2.9.3",
         "org.immutables:value-processor:2.9.3",
         "org.inferred:freebuilder:2.8.0",
-        "org.projectlombok:lombok:1.18.26",
+        "org.projectlombok:lombok:1.18.28",
     ] + testonly_artifacts([
         "com.google.truth.extensions:truth-java8-extension:1.1.3",
         "com.google.truth:truth:1.1.3",
