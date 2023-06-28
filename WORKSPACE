@@ -183,7 +183,7 @@ load("//toolchain:defs.bzl", "testonly_artifacts")
 
 maven_install(
     artifacts = [
-        "com.google.auto.value:auto-value-annotations:1.10.1",
+        "com.google.auto.value:auto-value-annotations:1.10.2",
         "com.google.auto.value:auto-value:1.10.2",
         "com.google.errorprone:error_prone_annotations:2.20.0",
         "com.google.flogger:flogger-system-backend:0.7.4",
