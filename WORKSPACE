@@ -18,11 +18,17 @@ http_archive(
 )
 
 http_archive(
+    name = "rules_java",
+    sha256 = "27abf8d2b26f4572ba4112ae8eb4439513615018e03a299f85a8460f6992f6a3",
+    url = "https://github.com/bazelbuild/rules_java/releases/download/6.4.0/rules_java-6.4.0.tar.gz",
+)
+
+http_archive(
     name = "io_bazel_rules_go",
-    sha256 = "6b65cb7917b4d1709f9410ffe00ecf3e160edf674b78c54a894471320862184f",
+    sha256 = "278b7ff5a826f3dc10f04feaf0b70d48b68748ccd512d7f98bf442077f043fe3",
     urls = [
-        "https://github.com/bazelbuild/rules_go/releases/download/v0.41.0/rules_go-v0.39.0.zip",
-        "https://mirror.bazel.build/github.com/bazelbuild/rules_go/releases/download/v0.39.0/rules_go-v0.39.0.zip",
+        "https://github.com/bazelbuild/rules_go/releases/download/v0.41.0/rules_go-v0.41.0.zip",
+        "https://mirror.bazel.build/github.com/bazelbuild/rules_go/releases/download/v0.41.0/rules_go-v0.41.0.zip",
     ],
 )
 
@@ -49,13 +55,6 @@ http_archive(
     sha256 = "dc3fb206a2cb3441b485eb1e423165b231235a1ea9b031b4433cf7bc1fa460dd",
     strip_prefix = "rules_proto-5.3.0-21.7",
     url = "https://github.com/bazelbuild/rules_proto/archive/refs/tags/5.3.0-21.7.tar.gz",
-)
-
-http_archive(
-    name = "com_google_protobuf",
-    sha256 = "a700a49470d301f1190a487a923b5095bf60f08f4ae4cac9f5f7c36883d17971",
-    strip_prefix = "protobuf-23.4",
-    url = "https://github.com/protocolbuffers/protobuf/archive/refs/tags/v23.4.tar.gz",
 )
 
 http_archive(
@@ -93,9 +92,17 @@ bazel_skylib_workspace()
 
 # ---
 
+load("@rules_java//java:repositories.bzl", "rules_java_dependencies", "rules_java_toolchains")
+
+rules_java_dependencies()
+
+rules_java_toolchains()
+
+# ---
+
 load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_dependencies")
 
-go_register_toolchains(go_version = "1.20.4")
+go_register_toolchains(go_version = "1.20.7")
 
 go_rules_dependencies()
 
@@ -192,15 +199,15 @@ maven_install(
         "com.uber.nullaway:nullaway:0.10.12",
         "commons-validator:commons-validator:1.7",
         "org.checkerframework:checker-qual:3.37.0",
-        "org.immutables:value-annotations:2.9.3",
-        "org.immutables:value-processor:2.9.3",
+        "org.immutables:value-annotations:2.10.0-rc0",
+        "org.immutables:value-processor:2.10.0-rc0",
         "org.inferred:freebuilder:2.8.0",
         "org.projectlombok:lombok:1.18.28",
     ] + testonly_artifacts([
-        "com.google.truth.extensions:truth-java8-extension:1.1.3",
-        "com.google.truth:truth:1.1.3",
+        "com.google.truth.extensions:truth-java8-extension:1.1.5",
+        "com.google.truth:truth:1.1.5",
         "junit:junit:4.13.2",
-        "nl.jqno.equalsverifier:equalsverifier:3.14.1",
+        "nl.jqno.equalsverifier:equalsverifier:3.15.1",
     ]),
     fetch_sources = True,
     maven_install_json = "//:maven_install.json",

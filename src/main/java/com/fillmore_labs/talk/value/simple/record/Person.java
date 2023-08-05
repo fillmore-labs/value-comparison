@@ -2,6 +2,7 @@ package com.fillmore_labs.talk.value.simple.record;
 
 import com.google.auto.value.AutoBuilder;
 import com.google.common.collect.ImmutableSet;
+import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.Optional;
@@ -64,6 +65,7 @@ public record Person(String givenName, Optional<String> surname, ImmutableSet<Em
      * @param email list of strings
      * @return fluent builder
      */
+    @CanIgnoreReturnValue
     public final Builder email(String... email) {
       return email(
           Arrays.stream(email).map(EmailAddress::of).collect(ImmutableSet.toImmutableSet()));

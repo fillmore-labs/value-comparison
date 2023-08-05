@@ -2,6 +2,7 @@ package com.fillmore_labs.talk.value.simple.pojo;
 
 import com.google.auto.value.AutoBuilder;
 import com.google.common.collect.ImmutableSet;
+import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.util.Arrays;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
@@ -41,6 +42,7 @@ public abstract class PersonBuilder {
    * @param email list of strings
    * @return fluent builder
    */
+  @CanIgnoreReturnValue
   public final PersonBuilder email(String... email) {
     return email(Arrays.stream(email).map(EmailAddress::of).collect(ImmutableSet.toImmutableSet()));
   }

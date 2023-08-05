@@ -1,6 +1,7 @@
 package com.fillmore_labs.talk.value.inheritance.autovalue;
 
 import com.google.auto.value.AutoValue;
+import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import com.google.errorprone.annotations.Immutable;
 
 @Immutable
@@ -16,8 +17,10 @@ public abstract class MovieTicket {
   public abstract long serial();
 
   public abstract static class Builder<T extends MovieTicket.Builder<T>> {
+    @CanIgnoreReturnValue
     public abstract T movieName(String movieName);
 
+    @CanIgnoreReturnValue
     public abstract T serial(long serial);
 
     public abstract MovieTicket build();
