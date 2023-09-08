@@ -199,7 +199,7 @@ maven_install(
         "com.uber.nullaway:nullaway:0.10.14",
         "commons-validator:commons-validator:1.7",
         "org.checkerframework:checker-qual:3.37.0",
-        "org.immutables:value-annotations:2.10.0-rc0",
+        "org.immutables:value-annotations:2.10.0-rc1",
         "org.immutables:value-processor:2.10.0-rc0",
         "org.inferred:freebuilder:2.8.0",
         "org.projectlombok:lombok:1.18.28",
