@@ -200,7 +200,7 @@ maven_install(
         "commons-validator:commons-validator:1.7",
         "org.checkerframework:checker-qual:3.38.0",
         "org.immutables:value-annotations:2.10.0",
-        "org.immutables:value-processor:2.10.0-rc1",
+        "org.immutables:value-processor:2.10.0",
         "org.inferred:freebuilder:2.8.0",
         "org.projectlombok:lombok:1.18.30",
     ] + testonly_artifacts([
