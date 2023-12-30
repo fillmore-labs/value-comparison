@@ -196,7 +196,7 @@ maven_install(
         "com.google.flogger:flogger-system-backend:0.8",
         "com.google.flogger:flogger:0.8",
         "com.google.guava:guava:32.1.3-jre",
-        "com.uber.nullaway:nullaway:0.10.18",
+        "com.uber.nullaway:nullaway:0.10.19",
         "commons-validator:commons-validator:1.8.0",
         "org.checkerframework:checker-qual:3.42.0",
         "org.immutables:value-annotations:2.10.0",
