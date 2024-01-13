@@ -6,7 +6,7 @@ java_library(
     srcs = glob(["*.java"]),
     deps = [
         "//src/main/java/com/fillmore_labs/talk/value/composition/freebuilder",
-        "//toolchain:nullaway",
+        "//toolchain:checker",
         "//toolchain:truth",
         "@maven//:com_google_guava_guava",
     ],

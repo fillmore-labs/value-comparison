@@ -15,7 +15,7 @@ java_library(
     ],
     deps = [
         "//src/main/java/com/fillmore_labs/talk/value/simple/lombok",
+        "//toolchain:checker",
         "//toolchain:lombok",
-        "//toolchain:nullaway",
     ],
 )

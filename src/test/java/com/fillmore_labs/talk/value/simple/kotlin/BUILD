@@ -6,9 +6,8 @@ java_library(
     srcs = glob(["*.java"]),
     deps = [
         "//src/main/kotlin/com/fillmore_labs/talk/value/simple/kotlin",
-        "//toolchain:nullaway",
+        "//toolchain:checker",
         "//toolchain:truth",
-        "@com_github_jetbrains_kotlin//:kotlin-stdlib",
     ],
 )
 

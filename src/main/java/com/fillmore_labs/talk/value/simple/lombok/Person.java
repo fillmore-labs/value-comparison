@@ -18,6 +18,10 @@ import org.checkerframework.checker.nullness.qual.Nullable;
   "SameNameButDifferent",
   "UnnecessarilyFullyQualified",
   "Var",
+  "allcheckers:type.anno.before.decl.anno",
+  "allcheckers:type.anno.before.modifier",
+  "nullness:assignment",
+  "nullness:initialization.fields.uninitialized",
 })
 @Value
 @Builder

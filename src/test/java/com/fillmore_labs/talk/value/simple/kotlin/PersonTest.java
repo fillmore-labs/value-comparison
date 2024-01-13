@@ -29,7 +29,7 @@ public final class PersonTest {
   }
 
   @Test
-  @SuppressWarnings("NullAway")
+  @SuppressWarnings("nullness:argument")
   public void notNull() {
     var ex = assertThrows(NullPointerException.class, () -> Person.of(null, null));
     assertThat(ex).hasMessageThat().contains("givenName");

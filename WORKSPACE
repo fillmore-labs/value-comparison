@@ -73,15 +73,15 @@ http_archive(
 
 http_archive(
     name = "io_bazel_rules_scala",
-    sha256 = "6a423ab3ffa94f173e26421ebc93efc3bea239b057248886b70fb9e1914267c4",
-    strip_prefix = "rules_scala-20210201",
-    url = "https://github.com/bazelbuild/rules_scala/archive/refs/tags/v20210201.tar.gz",
+    sha256 = "9a23058a36183a556a9ba7229b4f204d3e68c8c6eb7b28260521016b38ef4e00",
+    strip_prefix = "rules_scala-6.4.0",
+    url = "https://github.com/bazelbuild/rules_scala/releases/download/v6.4.0/rules_scala-v6.4.0.tar.gz",
 )
 
 http_archive(
     name = "io_bazel_rules_kotlin",
-    sha256 = "01293740a16e474669aba5b5a1fe3d368de5832442f164e4fbfc566815a8bc3a",
-    url = "https://github.com/bazelbuild/rules_kotlin/releases/download/v1.9.0/rules_kotlin_release.tgz",
+    sha256 = "5766f1e599acf551aa56f49dab9ab9108269b03c557496c54acaf41f98e2b8d6",
+    url = "https://github.com/bazelbuild/rules_kotlin/releases/download/v1.9.0/rules_kotlin-v1.9.0.tar.gz",
 )
 
 # ---
@@ -102,7 +102,7 @@ rules_java_toolchains()
 
 load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_dependencies")
 
-go_register_toolchains(go_version = "1.20.7")
+go_register_toolchains(go_version = "1.21.6")
 
 go_rules_dependencies()
 
@@ -140,34 +140,13 @@ rules_proto_toolchains()
 
 load("@io_bazel_rules_scala//:scala_config.bzl", "scala_config")
 
-scala_config(scala_version = "2.13.10")
+scala_config(scala_version = "2.13.12")
 
-load("@io_bazel_rules_scala//scala:scala.bzl", "scala_repositories")
+load("@io_bazel_rules_scala//scala:scala.bzl", "rules_scala_setup", "rules_scala_toolchain_deps_repositories")
 
-scala_repositories(
-    fetch_sources = True,
-    overriden_artifacts = {
-        "io_bazel_rules_scala_scala_compiler": {
-            "artifact": "org.scala-lang:scala-compiler:2.13.10",
-            "deps": [
-                "@io_bazel_rules_scala_scala_library",
-                "@io_bazel_rules_scala_scala_reflect",
-            ],
-            "sha256": "2cd4a964ea48e78c91a2a7b19c4fc67a9868728ace5ee966b1d498270b3c3aa7",
-        },
-        "io_bazel_rules_scala_scala_library": {
-            "artifact": "org.scala-lang:scala-library:2.13.10",
-            "sha256": "e6ca607c3fce03e8fa38af3374ce1f8bb098e316e8bf6f6d27331360feddb1c1",
-        },
-        "io_bazel_rules_scala_scala_reflect": {
-            "artifact": "org.scala-lang:scala-reflect:2.13.10",
-            "deps": [
-                "@io_bazel_rules_scala_scala_library",
-            ],
-            "sha256": "62bd7a7198193c5373a992c122990279e413af3307162472a5d3cbb8ecadb35e",
-        },
-    },
-)
+rules_scala_setup()
+
+rules_scala_toolchain_deps_repositories(fetch_sources = True)
 
 load("@io_bazel_rules_scala//scala:toolchains.bzl", "scala_register_toolchains", "scala_register_unused_deps_toolchains")
 
@@ -196,18 +175,20 @@ maven_install(
         "com.google.flogger:flogger-system-backend:0.8",
         "com.google.flogger:flogger:0.8",
         "com.google.guava:guava:33.0.0-jre",
-        "com.uber.nullaway:nullaway:0.10.20",
         "commons-validator:commons-validator:1.8.0",
         "org.checkerframework:checker-qual:3.42.0",
+        "org.checkerframework:checker-qual:3.42.0",
+        "org.checkerframework:checker-util:3.42.0",
+        "org.checkerframework:checker:3.42.0",
         "org.immutables:value-annotations:2.10.0",
         "org.immutables:value-processor:2.10.0",
         "org.inferred:freebuilder:2.8.0",
         "org.projectlombok:lombok:1.18.30",
     ] + testonly_artifacts([
-        "com.google.truth.extensions:truth-java8-extension:1.1.5",
-        "com.google.truth:truth:1.1.5",
+        "com.google.truth.extensions:truth-java8-extension:1.2.0",
+        "com.google.truth:truth:1.2.0",
         "junit:junit:4.13.2",
-        "nl.jqno.equalsverifier:equalsverifier:3.15.1",
+        "nl.jqno.equalsverifier:equalsverifier:3.15.6",
     ]),
     fetch_sources = True,
     maven_install_json = "//:maven_install.json",

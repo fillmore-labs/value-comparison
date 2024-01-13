@@ -20,7 +20,7 @@ public class EmailAddressTest {
   }
 
   @Test
-  @SuppressWarnings("NullAway")
+  @SuppressWarnings("nullness:argument")
   public void notNull() {
     assertThrows(NullPointerException.class, () -> EmailAddress.of(null));
   }

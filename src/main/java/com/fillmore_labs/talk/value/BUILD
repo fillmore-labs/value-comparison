@@ -13,7 +13,7 @@ java_library(
         "//src/main/java/com/fillmore_labs/talk/value/simple/record",
         "//src/main/kotlin/com/fillmore_labs/talk/value/simple/kotlin",
         "//src/main/scala/com/fillmore_labs/talk/value/simple/scala",
-        "//toolchain:nullaway",
+        "//toolchain:checker",
         "@maven//:com_google_flogger_flogger",
     ],
 )

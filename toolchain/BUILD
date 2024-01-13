@@ -22,6 +22,11 @@ default_java_toolchain(
 )
 
 JAVACOPTS = [
+    "-AinvariantArrays",
+    "-ArequirePrefixInWarningSuppressions",
+    "-AwarnUnneededSuppressions",
+    "-AshowSuppressWarningsStrings",
+    "-AsuppressWarnings=allcheckers:type.checking.not.run,optional:optional.parameter",
     "-Xpkginfo:nonempty",
     "-XepExcludedPaths:.*/_javac/.*",
     "-XepDisableWarningsInGeneratedCode",
@@ -34,9 +39,6 @@ JAVACOPTS = [
     "-Xep:WildcardImport:OFF",
     "-Xep:ReturnMissingNullable:OFF",
     "-Xep:AnnotationPosition:OFF",
-    "-XepOpt:NullAway:AnnotatedPackages=com.fillmore_labs",
-    "-XepOpt:NullAway:CheckOptionalEmptiness=true",
-    "-XepOpt:NullAway:HandleTestAssertionLibraries=true",
 ]
 
 java_package_configuration(
@@ -68,7 +70,10 @@ package_group(
 
 scala_toolchain(
     name = "toolchain_scala213",
-    scalacopts = ["-Xsource:3"],
+    scalacopts = [
+        "-Xmigration",
+        "-Xsource:3",
+    ],
     unused_dependency_checker_mode = "warn",
     visibility = ["//visibility:public"],
 )
@@ -82,27 +87,37 @@ toolchain(
 
 define_kt_toolchain(
     name = "kotlin_toolchain",
-    api_version = "1.7",
+    api_version = "1.9",
     jvm_target = "17",
-    language_version = "1.7",
+    language_version = "1.9",
 )
 
 # ---
-# https://github.com/uber/NullAway/wiki
+# https://checkerframework.org/manual/#nullness-checker
+# https://checkerframework.org/manual/#optional-checker
 
 java_plugin(
-    name = "nullaway_processor",
-    deps = ["@maven//:com_uber_nullaway_nullaway"],
+    name = "nullness_checker",
+    processor_class = "org.checkerframework.checker.nullness.NullnessChecker",
+    deps = ["@maven//:org_checkerframework_checker"],
+)
+
+java_plugin(
+    name = "optional_checker",
+    processor_class = "org.checkerframework.checker.optional.OptionalChecker",
+    deps = ["@maven//:org_checkerframework_checker"],
 )
 
 java_library(
-    name = "nullaway",
-    exported_plugins = ["nullaway_processor"],
+    name = "checker",
+    exported_plugins = [
+        "nullness_checker",
+        "optional_checker",
+    ],
     neverlink = True,
     visibility = ["//visibility:public"],
     exports = [
         "@maven//:com_google_errorprone_error_prone_annotations",
-        "@maven//:com_uber_nullaway_nullaway",
         "@maven//:org_checkerframework_checker_qual",
     ],
 )

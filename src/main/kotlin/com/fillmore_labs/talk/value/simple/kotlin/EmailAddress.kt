@@ -11,12 +11,12 @@ private val EMAIL_VALIDATOR: EmailValidator = EmailValidator.getInstance()
  */
 @Suppress("DataClassPrivateConstructor") // https://youtrack.jetbrains.com/issue/KT-11914
 data class EmailAddress private constructor(val address: String) {
-  init {
-    require(EMAIL_VALIDATOR.isValid(address)) { "$address is not a valid e-mail address" }
-  }
+    init {
+        require(EMAIL_VALIDATOR.isValid(address)) { "$address is not a valid e-mail address" }
+    }
 
-  companion object {
-    @JvmStatic
-    fun of(address: String) = EmailAddress(address)
-  }
+    companion object {
+        @JvmStatic
+        fun of(address: String) = EmailAddress(address)
+    }
 }

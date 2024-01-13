@@ -6,7 +6,7 @@ java_library(
     srcs = glob(["*.java"]),
     deps = [
         "//src/main/scala/com/fillmore_labs/talk/value/simple/scala",
-        "//toolchain:nullaway",
+        "//toolchain:checker",
         "//toolchain:truth",
     ],
 )

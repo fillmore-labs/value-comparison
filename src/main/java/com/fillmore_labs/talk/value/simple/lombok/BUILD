@@ -11,8 +11,8 @@ java_library(
     name = "lombok_impl",
     srcs = glob(["*.java"]),
     deps = [
+        "//toolchain:checker",
         "//toolchain:lombok",
-        "//toolchain:nullaway",
         "@maven//:com_google_guava_guava",
         "@maven//:commons_validator_commons_validator",
     ],

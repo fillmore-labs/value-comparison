@@ -4,7 +4,6 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.fillmore_labs.talk.value.simple.record.Person;
 import com.google.common.collect.ImmutableMap;
-import java.util.Objects;
 import org.junit.Test;
 
 public final class MovieTicketTest {
@@ -28,6 +27,7 @@ public final class MovieTicketTest {
   }
 
   @Test
+  @SuppressWarnings("nullness:dereference.of.nullable")
   public void sellTicket() {
     var tickets = soldTickets();
 
@@ -37,6 +37,6 @@ public final class MovieTicketTest {
     assertThat(tickets).containsKey(ticket1);
     assertThat(tickets).doesNotContainKey(ticket2);
 
-    assertThat(Objects.requireNonNull(tickets.get(ticket1)).ticket()).isEqualTo(ticket1);
+    assertThat(tickets.get(ticket1).ticket()).isEqualTo(ticket1);
   }
 }

@@ -9,6 +9,7 @@ import scala.jdk.CollectionConverters._
 import scala.jdk.OptionConverters._
 
 private object Person {
+
   /** Java API: Construct a person
     *
     * @param givenName The given name. Required.
@@ -24,11 +25,12 @@ private object Person {
     )
 }
 
-final case class Person private(
+final case class Person private (
     givenName: String,
     surname: Option[String] = None,
     email: immutable.Set[EmailAddress] = Set.empty
 ) {
+
   /** Java API: The given name of this person. Everyone has one.
     *
     * @return A name.
