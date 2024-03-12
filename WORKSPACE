@@ -180,7 +180,7 @@ maven_install(
         "org.checkerframework:checker-qual:3.42.0",
         "org.checkerframework:checker-util:3.42.0",
         "org.checkerframework:checker:3.42.0",
-        "org.immutables:value-annotations:2.10.0",
+        "org.immutables:value-annotations:2.10.1",
         "org.immutables:value-processor:2.10.0",
         "org.inferred:freebuilder:2.8.0",
         "org.projectlombok:lombok:1.18.30",
