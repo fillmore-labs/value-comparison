@@ -178,7 +178,7 @@ maven_install(
         "commons-validator:commons-validator:1.9.0",
         "org.checkerframework:checker-qual:3.45.0",
         "org.checkerframework:checker-qual:3.45.0",
-        "org.checkerframework:checker-util:3.44.0",
+        "org.checkerframework:checker-util:3.45.0",
         "org.checkerframework:checker:3.45.0",
         "org.immutables:value-annotations:2.10.1",
         "org.immutables:value-processor:2.10.1",
