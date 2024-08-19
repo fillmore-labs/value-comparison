@@ -174,7 +174,7 @@ maven_install(
         "com.google.errorprone:error_prone_annotations:2.30.0",
         "com.google.flogger:flogger-system-backend:0.8",
         "com.google.flogger:flogger:0.8",
-        "com.google.guava:guava:33.2.1-jre",
+        "com.google.guava:guava:33.3.0-jre",
         "commons-validator:commons-validator:1.9.0",
         "org.checkerframework:checker-qual:3.46.0",
         "org.checkerframework:checker-qual:3.46.0",
