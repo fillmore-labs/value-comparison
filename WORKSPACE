@@ -179,7 +179,7 @@ maven_install(
         "org.checkerframework:checker-qual:3.46.0",
         "org.checkerframework:checker-qual:3.46.0",
         "org.checkerframework:checker-util:3.46.0",
-        "org.checkerframework:checker:3.46.0",
+        "org.checkerframework:checker:3.47.0",
         "org.immutables:value-annotations:2.10.1",
         "org.immutables:value-processor:2.10.1",
         "org.inferred:freebuilder:2.8.0",
