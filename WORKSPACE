@@ -66,9 +66,9 @@ http_archive(
 
 http_archive(
     name = "rules_jvm_external",
-    sha256 = "3a4d56357851cf5b0dae538b3f3e0612a4f58925dfb3cadb2e0c4e87d51e629e",
-    strip_prefix = "rules_jvm_external-6.5",
-    url = "https://github.com/bazelbuild/rules_jvm_external/releases/download/6.5/rules_jvm_external-6.5.tar.gz",
+    sha256 = "3afe5195069bd379373528899c03a3072f568d33bd96fe037bd43b1f590535e7",
+    strip_prefix = "rules_jvm_external-6.6",
+    url = "https://github.com/bazelbuild/rules_jvm_external/releases/download/6.6/rules_jvm_external-6.6.tar.gz",
 )
 
 http_archive(
