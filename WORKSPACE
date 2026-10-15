@@ -80,8 +80,8 @@ http_archive(
 
 http_archive(
     name = "io_bazel_rules_kotlin",
-    sha256 = "e1448a56b2462407b2688dea86df5c375b36a0991bd478c2ddd94c97168125e2",
-    url = "https://github.com/bazelbuild/rules_kotlin/releases/download/v2.1.3/rules_kotlin-v2.1.3.tar.gz",
+    sha256 = "aa3255452dbe9b52da2ba7787f0865f107805885109f39c3d5bafc21a521bcb6",
+    url = "https://github.com/bazelbuild/rules_kotlin/releases/download/v2.4.21/rules_kotlin-v2.4.21.tar.gz",
 )
 
 # ---
